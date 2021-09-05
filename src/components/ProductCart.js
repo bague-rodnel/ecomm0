@@ -127,7 +127,14 @@ export default function Cart({ history }) {
                                     <h3>
                                       <a href={item.href}>{item.name}</a>
                                     </h3>
-                                    <p className="ml-4">{item.price}</p>
+                                    <div>
+                                      <p className="ml-4 small text-right">
+                                        ${(item.price).toFixed(2)}
+                                      </p>
+                                      <p className="ml-4 text-success text-right">
+                                        ${(item.price * item.quantity).toFixed(2)}
+                                      </p>
+                                    </div>
                                   </div>
                                   {/* <p className="mt-1 text-sm text-gray-500">{item.color}</p> */}
                                 </div>
@@ -164,7 +171,7 @@ export default function Cart({ history }) {
                   <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                     <div className="flex justify-between text-base font-medium text-gray-900">
                       <p>Subtotal</p>
-                      <p>${cartItems.reduce((acc, item) => (acc + item.quantity * item.price), 0).toFixed(2)}</p>
+                      <p className="text-success">${cartItems.reduce((acc, item) => (acc + item.quantity * item.price), 0).toFixed(2)}</p>
                     </div>
                     <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                     <div className="mt-6">
@@ -196,6 +203,11 @@ export default function Cart({ history }) {
                           Continue Shopping<span aria-hidden="true"> &rarr;</span>
                         </button>
                       </p>
+                    </div>
+                    <div className="mt-6 flex justify-center text-sm">
+                      <Link to={`/cart`}>
+                        <span className="small text-gray-400">cart page view</span>
+                      </Link>
                     </div>
                   </div>
                 </div>

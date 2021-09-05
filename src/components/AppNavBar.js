@@ -77,7 +77,7 @@ export default function AppNavBar() {
 
                       <Nav.Link as={NavLink} to="/about" className="px-3 py-2 rounded-md font-medium text-gray-10  ">
                         
-                        About Zuittsu
+                        About Zuittzu
 
                       </Nav.Link>
 
