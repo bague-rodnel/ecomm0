@@ -79,7 +79,7 @@ export const myOrders = () => async (dispatch) => {
 
     // const { data } = await axios.get(`${API}/api/orders/me`, config);
     // const { data } = await axios.get(`http://localhost:4000/api/orders/me`, config);
-    const { data } = await axios.get(`/api/orders/me`, config);
+    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/orders/me`, config);
 
 
      
@@ -110,7 +110,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
 
     // const { data } = await axios.get(`${API}/api/orders/${id}`, config);
     // const { data } = await axios.get(`http://localhost:4000/api/orders/${id}`, config);
-    const { data } = await axios.get(`/api/orders/${id}`, config);
+    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`, config);
 
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
@@ -140,7 +140,7 @@ export const getAllOrders = () => async (dispatch) => {
 
     // const { data } = await axios.get(`${API}/api/orders`, config);
     // const { data } = await axios.get(`http://localhost:4000/api/orders`, config);
-    const { data } = await axios.get(`/api/orders`, config);
+    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/orders`, config);
 
 
     dispatch({
@@ -171,7 +171,7 @@ export const updateOrder = (id, orderData) => async (dispatch)  => {
 
     // const { data } = await axios.put(`${API}/api/orders/${id}`, orderData, config);
     // const { data } = await axios.put(`http://localhost:4000/api/orders/${id}`, orderData, config);
-    const { data } = await axios.put(`/api/orders/${id}`, orderData, config);
+    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`, orderData, config);
 
 
 
@@ -204,7 +204,7 @@ export const deleteOrder = (id) => async (dispatch)  => {
 
     // const { data } = await axios.delete(`${API}/api/orders/${id}`, config);
     // const { data } = await axios.delete(`http://localhost:4000/api/orders/${id}`, config);
-    const { data } = await axios.delete(`/api/orders/${id}`, config);
+    const { data } = await axios.delete(`https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`, config);
 
 
     dispatch({

@@ -82,7 +82,7 @@ export default function App(){
     store.dispatch(loadUser());
 
     (async () => {
-      const { data } = await axios.get(`/api/payments/stripeapi`);
+      const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/payments/stripeapi`);
       setStripeAPIKey(data.stripeAPIKey);
     })();
 

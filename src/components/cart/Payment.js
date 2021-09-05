@@ -85,7 +85,7 @@ const Payment = ({ history }) => {
 
       // res = await axios.post(`${API}/api/payments/process`, paymentData, config);
       // res = await axios.post(`http://localhost:4000/api/payments/process`, paymentData, config);
-      res = await axios.post(`/api/payments/process`, paymentData, config);
+      res = await axios.post(`https://csp3-ecommercev2.herokuapp.com/api/payments/process`, paymentData, config);
 
 
 

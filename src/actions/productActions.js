@@ -102,7 +102,7 @@ export const getProductDetails = (id) => async (dispatch) => {
 
     // const { data } = await axios.get(`${API}/api/products/${id}`);
     // const { data } = await axios.get(`http://localhost:4000/api/products/${id}`);
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/products/${id}`);
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
@@ -134,7 +134,7 @@ export const newProduct = (productData) => async (dispatch) => {
 
     // const { data } = await axios.post(`${API}/api/products`, productData, config);
     // const { data } = await axios.post(`http://localhost:4000/api/products`, productData, config);
-    const { data } = await axios.post(`/api/products`, productData, config);
+    const { data } = await axios.post(`https://csp3-ecommercev2.herokuapp.com/api/products`, productData, config);
 
 
     dispatch({
@@ -164,7 +164,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
 
     // const { data } = await axios.put(`${API}/api/products/${id}`, productData, config);
     // const { data } = await axios.put(`http://localhost:4000/api/products/${id}`, productData, config);
-    const { data } = await axios.put(`/api/products/${id}`, productData, config);
+    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/products/${id}`, productData, config);
 
     dispatch({
       type: UPDATE_PRODUCT_SUCCESS,
@@ -192,7 +192,7 @@ export const archiveProduct = (id) => async (dispatch) => {
 
     // const { data } = await axios.put(`${API}/api/products/${id}/archive`, config);
     // const { data } = await axios.put(`http://localhost:4000/api/products/${id}/archive`, {}, config);
-    const { data } = await axios.put(`/api/products/${id}/archive`, {}, config);
+    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/products/${id}/archive`, {}, config);
 
 
 
@@ -223,7 +223,7 @@ export const unarchiveProduct = (id) => async (dispatch) => {
 
     // const { data } = await axios.put(`${API}/api/products/${id}/unarchive`, {}, config);
     // const { data } = await axios.put(`http://localhost:4000/api/products/${id}/unarchive`, {}, config);
-    const { data } = await axios.put(`/api/products/${id}/unarchive`, {}, config);
+    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/products/${id}/unarchive`, {}, config);
 
     dispatch({
       type: UNARCHIVE_PRODUCT_SUCCESS,
@@ -252,7 +252,7 @@ export const deleteProduct = (id) => async (dispatch) => {
 
     // const { data } = await axios.delete(`${API}/api/products/${id}`, config);
     // const { data } = await axios.delete(`http://localhost:4000/api/products/${id}`, config);
-    const { data } = await axios.delete(`/api/products/${id}`, config);
+    const { data } = await axios.delete(`https://csp3-ecommercev2.herokuapp.com/api/products/${id}`, config);
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
@@ -283,7 +283,7 @@ export const newReview = (reviewData) => async (dispatch) => {
 
     // const { data } = await axios.put(`${API}/api/products/reviews`, reviewData, config);
     // const { data } = await axios.put(`http://localhost:4000/api/products/reviews`, reviewData, config);
-    const { data } = await axios.put(`/api/products/reviews`, reviewData, config);
+    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/products/reviews`, reviewData, config);
 
     dispatch({
       type: NEW_REVIEW_SUCCESS,
@@ -312,7 +312,7 @@ export const getAdminProducts = () => async (dispatch) => {
 
     // const { data } = await axios.get(`${API}/api/products/admin`, config);
     // const { data } = await axios.get(`http://localhost:4000/api/products/admin`, config);
-    const { data } = await axios.get(`/api/products/admin`, config);
+    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/products/admin`, config);
 
 
 
@@ -343,7 +343,7 @@ export const getProductReviews = (productId) => async (dispatch) => {
 
     // const { data } = await axios.get(`${API}/api/products/reviews?productId=${productId}`, config);
     // const { data } = await axios.get(`http://localhost:4000/api/products/reviews?productId=${productId}`, config);
-    const { data } = await axios.get(`/api/products/reviews?productId=${productId}`, config);
+    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/products/reviews?productId=${productId}`, config);
 
 
     dispatch({
@@ -374,7 +374,7 @@ export const deleteReview = (id, productId) => async (dispatch) => {
 
     // const { data } = await axios.delete(`${API}/api/products/reviews?id=${id}&productId=${productId}`, config);
     // const { data } = await axios.delete(`http://localhost:4000/api/products/reviews?id=${id}&productId=${productId}`, config);
-    const { data } = await axios.delete(`/api/products/reviews?id=${id}&productId=${productId}`, config);
+    const { data } = await axios.delete(`https://csp3-ecommercev2.herokuapp.com/api/products/reviews?id=${id}&productId=${productId}`, config);
 
     dispatch({
       type: DELETE_REVIEW_SUCCESS,

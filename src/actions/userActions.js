@@ -65,7 +65,7 @@ export const login = (email, password) => async (dispatch) => {
     // const { data } = await axios.post(`http://localhost:4000/api/users/login`, { email, password }, config);
     // const { data } = await axios.post(`${API}/api/users/login`, { email, password }, config);
     // const { data } = await axios.post(`https://csp3-api-v1.herokuapp.com/api/users/login`, { email, password }, config);
-    const { data } = await axios.post(`/api/users/login`, { email, password }, config);
+    const { data } = await axios.post(`https://csp3-ecommercev2.herokuapp.com/api/users/login`, { email, password }, config);
 
     localStorage.setItem('token', data.token);
 
@@ -102,7 +102,7 @@ export const register = (userData) => async (dispatch) => {
 
     // const { data } = await axios.post(`${API}/api/users/register`, userData, config)
     // const { data } = await axios.post(`http://localhost:4000/api/users/register`, userData, config)
-    const { data } = await axios.post(`/api/users/register`, userData, config)
+    const { data } = await axios.post(`https://csp3-ecommercev2.herokuapp.com/api/users/register`, userData, config)
 
     dispatch({
       type: REGISTER_USER_SUCCESS,
@@ -134,7 +134,7 @@ export const loadUser = () => async (dispatch) => {
 
     // const { data } = await axios.get(`${API}/api/users/me`, config);
     // const { data } = await axios.get(`http://localhost:4000/api/users/me`, config);
-    const { data } = await axios.get(`/api/users/me`, config);
+    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/users/me`, config);
 
 
     data.token = token;
@@ -171,7 +171,7 @@ export const getAllUsers = () => async (dispatch) => {
 
     // const { data } = await axios.get(`${API}/api/users`, config);
     // const { data } = await axios.get(`http://localhost:4000/api/users`, config);
-    const { data } = await axios.get(`/api/users`, config);
+    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/users`, config);
 
     dispatch({
       type: ALL_USERS_SUCCESS,
@@ -226,7 +226,7 @@ export const updateProfile = (userData) => async (dispatch) => {
 
     // const { data } = await axios.put(`${API}/api/users/me/update`, userData, config)
     // const { data } = await axios.put(`http://localhost:4000/api/users/me/update`, userData, config)
-    const { data } = await axios.put(`/api/users/me/update`, userData, config)
+    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/users/me/update`, userData, config)
 
 
     dispatch({
@@ -258,7 +258,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
 
     // const { data } = await axios.put(`${API}/api/users/password/update`, passwords, config)
     // const { data } = await axios.put(`http://localhost:4000/api/users/password/update`, passwords, config)
-    const { data } = await axios.put(`/api/users/password/update`, passwords, config)
+    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/users/password/update`, passwords, config)
 
 
 
@@ -288,7 +288,7 @@ export const forgotPassword = (email) => async (dispatch) => {
 
     // const { data } = await axios.post(`${API}/api/users/password/forgot`, email, config)
     // const { data } = await axios.post(`http://localhost:4000/api/users/password/forgot`, email, config)
-    const { data } = await axios.post(`/api/users/password/forgot`, email, config)
+    const { data } = await axios.post(`https://csp3-ecommercev2.herokuapp.com/api/users/password/forgot`, email, config)
 
 
 
@@ -320,7 +320,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
     }
 
     // const { data } = await axios.put(`${API}/api/users/password/reset/${token}`, passwords, config)
-    const { data } = await axios.put(`http://localhost:4000/api/users/password/reset/${token}`, passwords, config)
+    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/users/password/reset/${token}`, passwords, config)
 
 
     dispatch({
@@ -352,7 +352,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
     }
 
     // const { data } = await axios.put(`${API}/api/users/${id}`, userData, config)
-    const { data } = await axios.put(`http://localhost:4000/api/users/${id}`, userData, config)
+    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/users/${id}`, userData, config)
 
 
     dispatch({
@@ -384,7 +384,7 @@ export const getUserDetails = (id) => async (dispatch) => {
     }
 
     // const { data } = await axios.get(`${API}/api/users/${id}`, config);
-    const { data } = await axios.get(`http://localhost:4000/api/users/${id}`, config);
+    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/users/${id}`, config);
 
 
     dispatch({
@@ -416,7 +416,7 @@ export const deleteUser = (id) => async (dispatch) => {
     }
 
     // const { data } = await axios.delete(`${API}/api/users/${id}`, config);
-    const { data } = await axios.delete(`http://localhost:4000/api/users/${id}`, config);
+    const { data } = await axios.delete(`https://csp3-ecommercev2.herokuapp.com/api/users/${id}`, config);
 
 
     dispatch({
