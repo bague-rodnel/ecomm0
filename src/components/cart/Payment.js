@@ -148,8 +148,8 @@ const Payment = ({ history }) => {
       <CheckoutSteps shipping confirmOrder payment /> 
 
       <div className="row justify-content-center">
-        <div className="col-10 col-lg-7">
-          <form className="shadow-lg px-5 py-5 my-4" 
+        <div className="col-12 col-lg-6">
+          <form className="shadow-lg px-4 px-lg-5 py-5 my-4" 
             onSubmit={handleSubmit}>
             <h1 className="mb-4 h3">Card Info</h1>
             <div className="form-group mb-4">
@@ -188,7 +188,7 @@ const Payment = ({ history }) => {
               type="submit"
               className="btn btn-success fw-bold my-3 py-3 w-100"
             >
-              Pay {` - ${orderInfo && orderInfo.totalPrice}`}
+              Pay {` - $${orderInfo && orderInfo.totalPrice}`}
             </button>
   
           </form>

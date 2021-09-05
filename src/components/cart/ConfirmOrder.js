@@ -40,39 +40,48 @@ const ConfirmOrder = ({ history }) => {
       <CheckoutSteps shipping confirmOrder />
 
       <div className="row d-flex justify-content-between">
-        <div className="col-12 col-lg-8 mt-5 order-confirm">
+        <div className="col-12 col-lg-8 mt-3 mt-lg-5 order-confirm">
+          <h1 className="h3 text-center">Confirm Your Order</h1>
 
-          <section className="border-bottom">
+          <section className="py-3 px-2 border-top text-gray-700">
             <h4 className="mb-3">Shipping Info</h4>
-            <p><b>Name:</b> { user.firstName + ' ' + user.lastName }</p>
-            <p><b>Phone:</b> { shippingInfo.phoneNo }</p>
-            <p className="mb-4"><b>Address:</b> 
-              {`${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`}
-            </p>
+            <div className="flex">
+              <span className="flex-grow-1 fw-bold">Name:</span><span className="flex-grow-1 text-right">{ user.firstName + ' ' + user.lastName }</span>
+            </div>
+            <div className="flex">
+              <span className="flex-grow-1 fw-bold">Phone:</span><span className="flex-grow-1 text-right">{ shippingInfo.phoneNo }</span>
+            </div>
+            <div className="flex">
+              <span className="flex-grow-1 fw-bold">Address:</span><span className="flex-grow-1 text-right">{`${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`}</span>
+            </div>
           </section>
             
-          <section>
-            <h4 className="mt-4">Your Cart Items:</h4>
+          <section className="py-3 px-2 border-top">
+            <h4 className="mt-4 mb-3">Your Cart Items</h4>
 
             { cartItems.map( item => (
               <Fragment>
+                <div className="text-gray-600">
                   <div className="cart-item my-2" key={item.product}>
                     <div className="row">
                       <div className="col-4 col-lg-2">
                           <img src={item.image} alt={item.name} height="45" width="65" />
                       </div>
 
-                      <div className="col-5 col-lg-6">
+                      <div className="col-4 col-lg-6 small">
                           <Link to={`/products/${item.product}`}>{item.name}</Link>
                       </div>
 
 
-                      <div className="col-4 col-lg-4 mt-4 mt-lg-0">
-                          <p>{item.quantity} x ${item.price} = <b>${(item.quantity * item.price).toFixed(2)}</b></p>
+                      <div className="col-4 col-lg-4 mt-4 mt-lg-0 text-right">
+                        <div>${item.price}</div>
+                        <div>x {item.quantity}</div>
+                        <div className="fw-bold">${(item.quantity * item.price).toFixed(2)}</div>
                       </div>
 
                     </div>
                   </div>
+                </div>
               </Fragment>
             ))}
           
@@ -80,7 +89,7 @@ const ConfirmOrder = ({ history }) => {
         </div>
     
         <div className="col-12 col-lg-3 my-4">
-          <div className="shadow py-4 px-4">
+          <div className="shadow py-4 px-4 my-lg-5">
             <h4 className="py-3">Order Summary</h4>
             <hr />
             <p className="my-2">Subtotal:  <span className="order-summary-values">${itemsPrice}</span></p>

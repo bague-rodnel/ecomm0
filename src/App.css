@@ -98,8 +98,15 @@ html {
   background: #eeeeee;
 }
 
+@media (max-width: 400px) {
+  .hidden--sm {
+    display: none;
+  }
+}
+
 .active-step {
-  background: #fa9c23;
+  /*background: #fa9c23;*/
+  background: #6DCCDE;
   color: #fff;
 }
 
@@ -107,7 +114,8 @@ html {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  /*border-left: 15px solid #fa9c23;*/
+  border-left:  15px solid #6DCCDE;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -115,9 +123,11 @@ html {
 .triangle2-active {
   width: 0;
   float: left;
-  border-top: 20px solid #fa9c23;
+  /*border-top: 20px solid #fa9c23;*/
+  border-top:  20px solid #6DCCDE;
   border-left: 15px solid #fff;
-  border-bottom: 20px solid #fa9c23;
+  /*border-bottom: 20px solid #fa9c23;*/
+  border-bottom:  20px solid #6DCCDE;
   margin-right: -1px;
 }
 

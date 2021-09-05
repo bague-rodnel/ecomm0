@@ -36,10 +36,10 @@ const Shipping = ({ history }) => {
       <div className="container container-fluid">
       <CheckoutSteps shipping />
       <div className="row wrapper">
-        <div className="col-10 col-lg-7 mx-auto">
-          <form className="shadow-lg my-2 py-5 px-5" 
+        <div className="col-12 col-lg-7 mx-auto">
+          <form className="shadow-lg my-2 py-4 py-lg-5 px-4 px-lg-5" 
             onSubmit={handleSubmit}>
-            <h1 className="mb-4 h3">Shipping Info</h1>
+            <h3 className="mb-4 h3">Shipping Info</h3>
             <div className="form-group mb-3">
               <label htmlFor="address_field">Address</label>
               <input

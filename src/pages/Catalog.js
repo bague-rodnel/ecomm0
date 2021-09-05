@@ -72,7 +72,7 @@ export default function Catalog({ match }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [price, setPrice] = useState([1, 1000]);
+  const [price, setPrice] = useState([1, 200]);
   const [category, setCategory] = useState('');
   const [rating, setRating] = useState(0);
   const [sliderChanged, setSliderChanged] = useState(false);
@@ -152,23 +152,9 @@ export default function Catalog({ match }) {
                 {/* Filters */}
                <form className="mt-4 border-t border-gray-200">
 
-               
-                <Range 
-                  marks={{ 1 : `$1`, 1000 : `$1000`}}
-                  min={1}
-                  max={1000}
-                  defaultValue={[1, 1000]}
-                  tipFormatter={value => `$${value}`}
-                  tipProps={{
-                    placement: "top",
-                    visible: true
-                  }}
-                  value={price}
-                  onChange={price => setPrice(price)}
-                  onAfterChange={() => setSliderChanged(true)}
-                />
+
                  <h3 className="sr-only">Categories</h3>
-                 <ul role="list" className="font-medium ext-gray-900 px-2 py-3">
+                 <ul role="list" className="font-medium text-gray-900 px-2 py-3">
                    {subCategories.map((sub) => (
                      <li key={sub.name}>
                        <a href={sub.href} 
@@ -227,6 +213,25 @@ export default function Catalog({ match }) {
                      )}
                    </Disclosure>
                  ))}
+
+
+                <div className="my-5 px-5 ">
+                  <Range 
+
+                    marks={{ 1 : `$1`, 200 : `$200`}}
+                    min={1}
+                    max={200}
+                    defaultValue={[1, 200]}
+                    tipFormatter={value => `$${value}`}
+                    tipProps={{
+                      placement: "top",
+                      visible: true
+                    }}
+                    value={price}
+                    onChange={price => setPrice(price)}
+                    onAfterChange={() => setSliderChanged(true)}
+                  />
+                </div>
                </form>
               </div>
             </Transition.Child>
@@ -311,21 +316,7 @@ export default function Catalog({ match }) {
               
 
                 <form className="hidden lg:block">
-                  <Range 
-                    className="my-5"
-                    marks={{ 1 : `$1`, 1000 : `$1000`}}
-                    min={1}
-                    max={1000}
-                    defaultValue={[1, 1000]}
-                    tipFormatter={value => `$${value}`}
-                    tipProps={{
-                      placement: "top",
-                      visible: true
-                    }}
-                    value={price}
-                    onChange={price => setPrice(price)}
-                    onAfterChange={() => setSliderChanged(true)}
-                  />
+                  
 
                   <h3 className="sr-only">Categories</h3>
                   <ul role="list" className="text-xl font-medium text-gray-900 space-y-4 pb-6 border-b border-gray-200">
@@ -384,6 +375,23 @@ export default function Catalog({ match }) {
                       )}
                     </Disclosure>
                   ))}
+
+                  <div className="my-5 px-3">
+                    <Range 
+                      marks={{ 1 : `$1`, 200 : `$200`}}
+                      min={1}
+                      max={200}
+                      defaultValue={[1, 200]}
+                      tipFormatter={value => `$${value}`}
+                      tipProps={{
+                        placement: "top",
+                        visible: true
+                      }}
+                      value={price}
+                      onChange={price => setPrice(price)}
+                      onAfterChange={() => setSliderChanged(true)}
+                    />
+                  </div>
                 </form>
               </div>
 

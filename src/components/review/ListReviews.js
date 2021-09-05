@@ -2,7 +2,7 @@ import React from 'react'
 
 const ListReviews = ({ reviews }) => {
   return (
-    <div className="reviews w-75 mx-auto">
+    <div className="reviews w-75 mx-auto my-3">
       <h3>Product Reviews:</h3>
       { reviews && reviews.map( review => (
         <div key={review._id} className="review-card my-3">
