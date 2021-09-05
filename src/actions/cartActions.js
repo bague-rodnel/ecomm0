@@ -10,7 +10,7 @@ import {
 
 import store from '../store';
 
-// const API = 'https://csp3-api-v1.herokuapp.com';
+// const API = 'https://csp3-ecommercev2.herokuapp.com';
 // const API = 'https://youthful-jones-4f9fef.netlify.app/';
 // const API = 'http://localhost:4000';
 
@@ -33,7 +33,8 @@ export const addItemToCart = (id, quantity, user) => async (dispatch, getState) 
   }
   // const { data } = await axios.get(`${API}/api/products/${id}`, config);
   // const { data } = await axios.get(`http://localhost:4000/api/products/${id}`, config);
-  const { data } = await axios.get(`/api/products/${id}`, config);
+  // const { data } = await axios.get(`/api/products/${id}`, config);
+  const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/products/${id}`, config);
 
 
 

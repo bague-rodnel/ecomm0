@@ -67,6 +67,4 @@
     "postcss": "^7.0.36",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.9"
   }
-  ,
-  "proxy": "https://csp3-ecommercev2.herokuapp.com"
 }

@@ -74,7 +74,7 @@ export const getProducts = (keyword='', currentPage=1, price, category, rating=0
     // filter =  'chicken';
     // let link = `${API}/api/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&ratings[gte]=${rating}&filters=${filter}`;
     // let link = `http://localhost:4000/api/products?keyword=${keyword.toLowerCase()}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&ratings[gte]=${rating}&filters=${filter}`;
-    let link = `/api/products?keyword=${keyword.toLowerCase()}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&ratings[gte]=${rating}&filters=${filter}`;
+    let link = `https://csp3-ecommercev2.herokuapp.com/api/products?keyword=${keyword.toLowerCase()}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}&ratings[gte]=${rating}&filters=${filter}`;
 
 
 

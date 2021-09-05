@@ -46,7 +46,9 @@ export const createOrder = (order) => async (dispatch)  => {
 
     // const { data } = await axios.post(`${API}/api/orders/`, order, config);
     // const { data } = await axios.post(`http://localhost:4000/api/orders/`, order, config);
-      const { data } = await axios.post(`/api/orders/`, order, config);
+      // const { data } = await axios.post(`/api/orders/`, order, config);
+      const { data } = await axios.post(`https://csp3-ecommercev2.herokuapp.com/api/orders/`, order, config);
+      
 
 
 
