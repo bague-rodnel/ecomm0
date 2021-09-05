@@ -77,7 +77,7 @@ export default function AppNavBar() {
 
                       <Nav.Link as={NavLink} to="/about" className="px-3 py-2 rounded-md font-medium text-gray-10  ">
                         
-                        About Zuittzu
+                        About Zuittsu
 
                       </Nav.Link>
 
@@ -93,7 +93,7 @@ export default function AppNavBar() {
                   <Nav.Link
                       
                       as={NavLink}
-                      to="#!"
+                      to="#"
                       onClick={() => dispatch(toggleCart())}
                       className=" p-1 rounded-full text-gray-400 hover:text-white focus:outline-none d-flex"
                     >
@@ -229,7 +229,7 @@ export default function AppNavBar() {
                   </div>
                 </div>
 
-                <div className="-mr-2 flex md:hidden">
+                <div className="flex md:hidden">
                   {/* Mobile menu button */}
                   <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white">
                     <span className="sr-only">Open main menu</span>

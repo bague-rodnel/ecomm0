@@ -24,9 +24,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 //App Components
 import AppNavBar from './components/AppNavBar';
-import HeroSection from './components/HeroSection';
-import Carousel from './components/Carousel';
-import MailContainer from './components/MailingContainer';
 import Footer from './components/Footer';
 import ProductCart from './components/ProductCart';
 
@@ -76,15 +73,15 @@ import { loadStripe } from '@stripe/stripe-js';
 
 export default function App(){
 
-  const [stripeAPIKey, setStripeAPIKey] = useState('');
+  const [stripeAPIKey, setStripeAPIKey] = useState('pk_test_51JOMndGaIcykU8yAECuBAQrryn1oUmNvrhxRSu5owg64McO9BSzowuOlOiq7kngtBFi3r4tIZ3Io5b33k2BoG9zC00qPlep47U');
 
   useEffect(() => {
     store.dispatch(loadUser());
 
-    (async () => {
-      const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/payments/stripeapi`);
-      setStripeAPIKey(data.stripeAPIKey);
-    })();
+    // (async () => {
+    //   const { data } = await axios.get(`http://localhost:4000/api/payments/stripeapi`);
+    //   setStripeAPIKey(data.stripeAPIKey);
+    // })();
 
   }, [])
 

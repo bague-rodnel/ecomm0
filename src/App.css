@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .theme--text {
   color: #088abd;
 }
@@ -159,8 +163,6 @@
   font-family: Rokkitt;
   font-style: normal;
   font-weight: 600;
-  padding-left: 5rem;
-  padding-right: 5rem;
   margin: 0 10px 0 10px;
 }
 
@@ -435,13 +437,6 @@
 }
 
 @media (min-width: 300px) {
-  .text-hero {
-    font-size: 50px;
-    line-height: 50px;
-    padding: 15px 15px 10px 15px;
-    margin: 15px 15px 10px 15px;
-    text-align: center;
-  }
   .about-hero {
     font-size: 50px;
     line-height: 50px;
@@ -453,9 +448,6 @@
     padding-top: 2rem;
   }
   .cuz-padding {
-    padding: 0px;
-  }
-  .hero-paragraph {
     padding: 0px;
   }
   .text-carousel-button {
@@ -508,16 +500,10 @@
   .text-hero {
     font-size: 50px;
     line-height: 50px;
-    padding: 15px 15px 10px 15px;
-    margin: 15px 15px 10px 15px;
     text-align: center;
   }
   .cuz-padding {
     padding: 0px;
-  }
-  .hero-paragraph {
-    padding-left: 3rem;
-    padding-right: 3rem;
   }
   .text-carousel-button {
     font-size: 2rem;
@@ -591,10 +577,6 @@
   .text-hero {
     font-size: 60px;
   }
-  .hero-paragraph {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
   .cus-span {
     top: 500px;
     font-size: 3rem;
@@ -628,12 +610,8 @@
     padding-bottom: 10rem;
   }
   .text-hero {
-    font-size: 5rem;
-    line-height: 5rem;
-  }
-  .hero-paragraph {
-    padding-left: 4rem;
-    padding-right: 5rem;
+    font-size: 4rem;
+    line-height: 4rem;
   }
   .text-carousel-button {
     font-size: 3rem;

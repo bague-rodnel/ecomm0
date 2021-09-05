@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 
 //Carousel Images
@@ -14,6 +14,7 @@ import dog from './../carousel-image/wet-dog-turkpotat.png';
 export default function Carousel() {
  
     var settings = {
+      arrows: false,
       dots: true,
       dotsClass: "slick-dots slick-thumb",
       infinite: true,
@@ -23,32 +24,6 @@ export default function Carousel() {
       speed: 3000,
       autoplaySpeed: 3000,
       cssEase: "linear",
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            initialSlide: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
     };
 
 
