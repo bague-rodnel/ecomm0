@@ -12,6 +12,10 @@ html {
   overflow-x: hidden;
 }
 
+.z-0 {
+  z-index: 0 !important;
+}
+
 .theme--text {
   color: #088abd;
 }

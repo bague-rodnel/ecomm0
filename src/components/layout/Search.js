@@ -24,7 +24,7 @@ const Search = ({ history }) => {
           onChange={(e) => setKeyword(e.target.value)}
         />
         <div className="input-group-append">
-          <button className="btn btn-outline-light">
+          <button className="btn btn-outline-light z-0">
             <i className="fa fa-search" aria-hidden="true"></i>
           </button>
         </div>
