@@ -45,6 +45,11 @@ export default function Example({ history }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (password.length < 8) {
+      alert.error("Password must be at least 8 characters long.");
+      return;
+    }    
     
     if (password !== confirmPassword)  {
       alert.error("Make sure the passwords match!");

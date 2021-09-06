@@ -23,7 +23,7 @@ import NoAvatar from '../images/no-img-avatar.png'
 //ICON
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon, SearchIcon, ShoppingCartIcon } from '@heroicons/react/outline'
-import { TOGGLE_CART_OVERLAY } from '../constants/cartConstants';
+// import { TOGGLE_CART_OVERLAY } from '../constants/cartConstants';
 
 
 function classNames(...classes) {
@@ -66,23 +66,36 @@ export default function AppNavBar() {
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-5 flex items-baseline space-x-4">
-                      <Nav.Link as={NavLink} to="/" className="px-3 py-2 rounded-md font-medium text-gray-10 ">
+                      <Nav.Link as={NavLink} to="/" id="cus-navlink" className=" px-3 py-2 rounded-md font-medium ">
                               Home
                       </Nav.Link>
 
-                      <Nav.Link as={NavLink} to="/products" className="px-3 py-2 rounded-md font-medium text-gray-10   ">
+                      <Nav.Link as={NavLink} to="/products" id="cus-navlink" className="px-3 py-2 rounded-md font-medium">
                         
                        Products
 
                       </Nav.Link>
 
-                      <Nav.Link as={NavLink} to="/about" className="px-3 py-2 rounded-md font-medium text-gray-10  ">
+                      <Nav.Link as={NavLink} to="/about" id="cus-navlink" className="px-3 py-2 rounded-md font-medium">
                         
                         About Zuittsu
 
+                      </Nav.Link >
+
+
+{/*<<<<<<< HEAD
+                      <Nav.Link as={NavLink} to="/search/apple" className="px-3 py-2 rounded-md font-medium text-gray-10 ">
+                        
+                        Search
+
                       </Nav.Link>
 
-                      <Route render={({ history }) => <Search history={history} />} />
+=======*/}
+                      
+
+
+                      <Route id="cus-navlink" render={({ history }) => <Search history={history} />} />
+
                   </div>
                 </div>
               </div>
@@ -92,18 +105,19 @@ export default function AppNavBar() {
                   <div className="ml-4 flex items-center md:ml-6">
                     
                   <Nav.Link
-                      
+
+                      id="cus-navlink"
                       as={NavLink}
                       to="#"
-                      onClick={() => dispatch({ type: TOGGLE_CART_OVERLAY })}
-                      className=" p-1 rounded-full text-gray-400 hover:text-white focus:outline-none d-flex"
+                      onClick={() => dispatch(toggleCart())}
+                      className=" p-1 rounded-full  d-flex"
                     >
 
-                      <button class="btn btn-link text-white position-relative">
+                      <button class="  text-white position-relative">
                         <span className="sr-only">View Cart</span>
-                        <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                        <ShoppingCartIcon id="cus-iconCart" className=" h-6 w-6" aria-hidden="true" />
                         { cartItems.length > 0 &&
-                          <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                          <span className="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
                           { cartItems.reduce((sum, item) => (sum + item.quantity), 0) }
                           </span>
                         }
@@ -121,11 +135,11 @@ export default function AppNavBar() {
                      {
                   !user ? (
                     <Fragment>
-                      <Nav.Link as={NavLink} to="/login" className="px-3 py-2 rounded-md font-medium text-gray-10  ">
+                      <Nav.Link as={NavLink} to="/login" id="cus-navlink" className="px-3 py-2 rounded-md font-medium  ">
                         Login
                       </Nav.Link>
 
-                      <Nav.Link as={NavLink} to="/register" className="px-3 py-2 rounded-md font-medium text-gray-10  ">
+                      <Nav.Link as={NavLink} to="/register" id="cus-navlink" className="px-3 py-2 rounded-md font-medium   ">
                         Sign up
                       </Nav.Link>
                     </Fragment>
@@ -133,11 +147,11 @@ export default function AppNavBar() {
                     <Menu as="div" className="ml-3 relative">
                       <div>
                           {/* PROFILE PIC with Dropdown menu*/}
-                          <Menu.Button className=" flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                          <Menu.Button  className=" flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
-                              src={user.avatar.url && user.avatar.url !== 'x' || NoAvatar }
+                              src={user.avatar.url !== 'x' && user.avatar.url || NoAvatar}
                               alt="Avatar"
                             />
                           </Menu.Button>
@@ -247,12 +261,14 @@ export default function AppNavBar() {
 
           
              <Disclosure.Panel className="md:hidden">  
+
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 
                  <Fragment>
                     <Nav.Link as={NavLink} to="/" className="px-3 py-2 rounded-md font-medium text-gray-10 ">
                       Home
                     </Nav.Link>
+
 
                     <Nav.Link as={NavLink} to="/products" className="px-3 py-2 rounded-md font-medium text-gray-10   ">
                       
@@ -266,7 +282,21 @@ export default function AppNavBar() {
 
                     </Nav.Link>
 
+
+                       <div>
+                              <div className="pb-4 border-b">
+                                <Nav.Link as={NavLink} to="/" id="cus-navlink" className="px-3 py-2 rounded-md font-medium ">
+                                  Home
+                                </Nav.Link>
+
+                                <Nav.Link as={NavLink} to="/products" id="cus-navlink" className="px-3 py-2 rounded-md font-medium    ">
+                                  
+                                  Products
+                                </Nav.Link>
+                              </div>
+                      </div>
                   </Fragment>
+
 
 
                   {
@@ -286,6 +316,7 @@ export default function AppNavBar() {
                             </Nav.Link>
                           </div>
 
+
                       ):null}
                       
                       <Route render={({ history })  => <Search history={history} />} />
@@ -300,8 +331,7 @@ export default function AppNavBar() {
                             <div className="flex items-center px-5">
 
                                 <div className="flex-shrink-0">
-                                   <img className="h-10 w-10 rounded-full" 
-                                   src={user.avatar.url && user.avatar.url !== 'x' || NoAvatar }  alt="" /> {/*INSERT PICTURE HERE*/}
+                                   <img className="h-10 w-10 rounded-full" src={user.avatar.url !== 'x' && user.avatar.url || NoAvatar}  alt="" /> {/*INSERT PICTURE HERE*/}
                                 </div>
 
                                 <div className="ml-3">
@@ -313,17 +343,18 @@ export default function AppNavBar() {
 
                            
                                 <Nav.Link
-                      
+
+                                  id="cus-navlink"
                                   as={NavLink}
                                   to="#!"
-                                  onClick={() => dispatch({ type: TOGGLE_CART_OVERLAY })}
+                                  onClick={() => dispatch(toggleCart())}
 
-                                  className=" p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                  className=" p-1 rounded-full "
                                 >
-                                  <button class="btn btn-link text-white position-relative">
-                                    <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                                  <button class=" text-white position-relative">
+                                    <ShoppingCartIcon id="cus-iconCart" className=" h-6 w-6" aria-hidden="true" />
                                       {( cartItems.length > 0 ) && 
-                                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                      <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                       { cartItems.reduce((sum, item) => (sum + item.quantity), 0) }
                                       <span className="sr-only">View Order</span>
                                     </span>}
@@ -342,6 +373,7 @@ export default function AppNavBar() {
                             </div>
 
                              <div className="mt-3 px-2 space-y-1">
+
                                { user && user.isAdmin ? 
                                   <Nav.Link 
                                     as={NavLink}
@@ -358,19 +390,25 @@ export default function AppNavBar() {
                                   </Nav.Link>
                                }
 
-                                
 
                                  <Nav.Link 
+
+                                   id="cus-navlink"
                                    as={NavLink}
+
                                    to="/me"
                                    className="px-3 py-2 rounded-md font-medium text-gray-100 hover:bg-blue-300">
                                       Profile
+
                                 </Nav.Link>
 
                                  <Nav.Link 
+                                   id="cus-navlink"
                                    as={NavLink}
+
                                    to="/logout"
                                    className="px-3 py-2 rounded-md font-medium text-gray-100 hover:bg-blue-300">
+
                                     Sign out
                                 </Nav.Link>
                                   

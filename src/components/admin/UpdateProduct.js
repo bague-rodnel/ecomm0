@@ -60,6 +60,7 @@ const UpdateProduct = ({ match, history }) => {
     if (isUpdated) {
       history.push("/admin/products");
       alert.success('Product updated successfully');
+      dispatch(getProductDetails(productId));
       dispatch({ type: UPDATE_PRODUCT_RESET });
     }
 

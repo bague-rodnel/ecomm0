@@ -14,6 +14,8 @@ import 'rc-slider/assets/index.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../actions/productActions';
 
+import NoProductImg from '../images/no-img-product.png';
+
 const { createSliderWithTooltip  } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
 
@@ -416,7 +418,7 @@ export default function Catalog({ match }) {
                                  >
                                   
                                   <img
-                                    src={product.images[0] && product.images[0].url || ""}
+                                    src={product.images[0] && product.images[0].url !== 'x' && product.images[0].url || NoProductImg}
                                     alt={product.name}
                                     className="w-full object-center object-cover group-hover:opacity-75"
                                   />
