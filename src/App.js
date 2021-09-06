@@ -127,7 +127,7 @@ export default function App(){
             <ProtectedRoute path="/admin/users" component={UsersList} isAdmin={true} exact />
             <ProtectedRoute path="/admin/users/:id" component={UpdateUser} isAdmin={true} exact />
             <ProtectedRoute path="/admin/reviews" component={ProductReviews} isAdmin={true} exact /> 
-            <Route path="*" component={PageNotFound} />
+            
             
             {stripeAPIKey && 
               <Elements stripe={loadStripe(stripeAPIKey)}>
