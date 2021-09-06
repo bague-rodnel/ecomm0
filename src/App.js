@@ -74,7 +74,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 export default function App(){
 
-  const [stripeAPIKey, setStripeAPIKey] = useState('sk_test_51JOMndGaIcykU8yAexffnRf0Ba1pbdcFuTR7TMPA4ngvh24hhLHDCZj79AJ2kauOemBRR7maj1qj7e53El7VcXNr00aGZjCk3M');
+  const [stripeAPIKey, setStripeAPIKey] = useState('pk_test_51JOMndGaIcykU8yAECuBAQrryn1oUmNvrhxRSu5owg64McO9BSzowuOlOiq7kngtBFi3r4tIZ3Io5b33k2BoG9zC00qPlep47U');
 
   useEffect(() => {
     store.dispatch(loadUser());
