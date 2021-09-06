@@ -74,15 +74,15 @@ import { loadStripe } from '@stripe/stripe-js';
 
 export default function App(){
 
-  const [stripeAPIKey, setStripeAPIKey] = useState('');
+  const [stripeAPIKey, setStripeAPIKey] = useState('sk_test_51JOMndGaIcykU8yAexffnRf0Ba1pbdcFuTR7TMPA4ngvh24hhLHDCZj79AJ2kauOemBRR7maj1qj7e53El7VcXNr00aGZjCk3M');
 
   useEffect(() => {
     store.dispatch(loadUser());
 
-    (async () => {
-      const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/payments/stripeapi`);
-      setStripeAPIKey(data.stripeAPIKey);
-    })();
+    // (async () => {
+    //   const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/payments/stripeapi`);
+    //   setStripeAPIKey(data.stripeAPIKey);
+    // })();
 
   }, [])
 
