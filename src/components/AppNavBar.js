@@ -55,13 +55,13 @@ export default function AppNavBar() {
                    <img
                       className="block h-8 w-8"
                       src={Logo}
-                      alt="Zuittsu"
+                      alt="Zuittzu"
                     />
 
                     <img
                       className="hidden lg:block h-8 w-auto"
                       src={LogoName}
-                      alt="Zuittsu"
+                      alt="Zuittzu"
                     />
                 </div>
                 <div className="hidden md:block">
@@ -82,16 +82,6 @@ export default function AppNavBar() {
 
                       </Nav.Link >
 
-
-{/*<<<<<<< HEAD
-                      <Nav.Link as={NavLink} to="/search/apple" className="px-3 py-2 rounded-md font-medium text-gray-10 ">
-                        
-                        Search
-
-                      </Nav.Link>
-
-=======*/}
-                      
 
 
                       <Route id="search" render={({ history }) => <Search history={history} />} />
@@ -265,36 +255,25 @@ export default function AppNavBar() {
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 
                  <Fragment>
-                    <Nav.Link as={NavLink} to="/" className="px-3 py-2 rounded-md font-medium text-gray-10 ">
+                    <Nav.Link as={NavLink} to="/" className="px-3 py-2 rounded-md font-medium text-gray-100 ">
                       Home
                     </Nav.Link>
 
 
-                    <Nav.Link as={NavLink} to="/products" className="px-3 py-2 rounded-md font-medium text-gray-10   ">
+                    <Nav.Link as={NavLink} to="/products" className="px-3 py-2 rounded-md font-medium text-gray-100   ">
                       
                       Products
 
                     </Nav.Link>
 
-                    <Nav.Link as={NavLink} to="/about" className="px-3 py-2 rounded-md font-medium text-gray-10  ">
+                    <Nav.Link as={NavLink} to="/about" className="px-3 py-2 rounded-md font-medium text-gray-100  ">
                       
-                      About
+                      About Zuittzu
 
                     </Nav.Link>
 
 
-                       <div>
-                              <div className="pb-4 border-b">
-                                <Nav.Link as={NavLink} to="/" id="navlink-home" className="cus-navlink px-3 py-2 rounded-md font-medium ">
-                                  Home
-                                </Nav.Link>
-
-                                <Nav.Link as={NavLink} to="/products" id="navlink-products" className="px-3 py-2 rounded-md font-medium    ">
-                                  
-                                  Products
-                                </Nav.Link>
-                              </div>
-                      </div>
+                   
                   </Fragment>
 
 
