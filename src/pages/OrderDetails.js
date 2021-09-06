@@ -38,7 +38,7 @@ const OrderDetails = ({ match }) => {
 
       { loading ? <Loader /> : (
         <Fragment>
-          <div className="row d-flex justify-content-between">
+          <div className="row d-flex justify-content-between pb-5">
             <div className="col-12 col-lg-8 mt-5 order-details mx-auto">
 
               <section className="border-b pb-4">

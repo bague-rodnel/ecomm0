@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductReviews, deleteReview, clearErrors } from '../../actions/productActions';
 import { DELETE_REVIEW_RESET } from '../../constants/productConstants';
 
-// import './admin.css';
 
 
 const ProductReviews = () => {
@@ -24,7 +23,7 @@ const ProductReviews = () => {
 
   console.log('rerendering...')
   useEffect(() => {    
-    if (productId != '' && productId.length >= sampleID.length) {
+    if (productId.length === sampleID.length) {
       dispatch(getProductReviews(productId));
     }    
 
@@ -45,8 +44,11 @@ const ProductReviews = () => {
   }
 
   const handleSubmit = (e) => {
-    if (productId != '' && productId.length >= sampleID.length)
-      dispatch(getProductReviews(productId));
+    if (productId.length !== sampleID.length) {
+      e.preventDefault();
+      return alert.error("Invalid MongoDB OjbectId");
+    }
+    dispatch(getProductReviews(productId));
   }
 
   const setReviews = () => {
@@ -101,7 +103,7 @@ const ProductReviews = () => {
     <Fragment>
       <MetaData title={'Product Reviews'} />
 
-      <div className="row">
+      <div className="row pb-5">
         <div className="col-12 col-md-2">
           <Sidebar />
         </div>

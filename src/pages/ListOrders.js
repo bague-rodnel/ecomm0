@@ -92,7 +92,7 @@ const ListOrders = () => {
     <Fragment>
       <MetaData title={'My Orders'} />
 
-      <div className="container container-fluid">
+      <div className="container container-fluid pb-5">
       <h1 className="my-5">My Orders</h1>
 
       { loading ? <Loader /> : (

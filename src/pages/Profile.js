@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import Loader from '../components/layout/Loader';
 import MetaData from '../components/layout/MetaData';
-
+import NoAvatar from '../images/no-img-avatar.png';
 const Profile = () => {
 
   const { user, loading } = useSelector(state => state.auth);
@@ -15,28 +15,32 @@ const Profile = () => {
         <Fragment>
           <MetaData title={'User Profile'} />
 
-          <div className="container container-fluid">
-          <h2 className="mt-5 ml-5">My Profile</h2>
-          <div className="row justify-content-around mt-5 user-info">
-              <div className="col-12 col-md-3 d-flex flex-column">
-                <figure className='avatar avatar-profile mx-auto'>
-                  <img className="rounded-circle img-fluid" src={user.avatar.url} alt={user.name} />
+          <div className="container container-fluid pb-5">
+            <h2 className="mt-5 ml-5">My Profile</h2>
+            <div className="row justify-content-evenly mt-5 text-center">
+
+              <div className="col-12 col-md-4">
+                <figure className='avatar avatar-profile mx-auto w-50'>
+                  <img className="rounded-circle img-fluid" 
+                  src={user.avatar.url && user.avatar.url !== 'x' || NoAvatar} 
+                  alt={user.name} />
                 </figure>
-                <Link to="/me/update" id="edit_profile" className="btn btn-outline btn-block my-5">
+                
+              </div>
+      
+              <div className="col-12 col-md-4 text-center text-md-start align-self-center mt-5 mt-md-0">
+
+                <p>Full Name: { `${user.firstName} ${user.lastName}`}</p>
+                <p>Email Address: { user.email }</p>
+                <p>Joined: { String(user.createdAt).substring(0, 10) }</p>
+
+
+                <Link to="/me/update" className="text-decoration-underline">
                   Edit Profile
                 </Link>
               </div>
-      
-              <div className="profile col-12 col-md-5 text-center text-md-start">
-                <h4 className="my-1">Full Name</h4>
-                <p className="ml-3">{ `${user.firstName} ${user.lastName}`}</p>
-    
-                <h4 className="my-1">Email Address</h4>
-                <p className="ml-3">{ user.email }</p>
 
-                <h4 className="my-1">Joined</h4>
-                <p className="ml-3">{ String(user.createdAt).substring(0, 10) }</p>
-
+              <div className="col-md-4">
                 { !user.isAdmin && (
                   <Link to="/orders/me" className="btn btn-success btn-block mt-5">
                     My Orders
@@ -47,8 +51,10 @@ const Profile = () => {
                   Change Password
                 </Link>
               </div>
+
+
+            </div>
           </div>
-        </div>
         </Fragment>
       )}
     </Fragment>

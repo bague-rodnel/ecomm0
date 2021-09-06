@@ -18,6 +18,7 @@ import Search from './layout/Search';
 //IMPORT PICTURE
 import Logo from './../images/logo.png';
 import LogoName from './../images/logo-name.png';
+import NoAvatar from '../images/no-img-avatar.png'
 
 //ICON
 import { Disclosure, Menu, Transition } from '@headlessui/react'
@@ -136,7 +137,7 @@ export default function AppNavBar() {
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
-                              src={user.avatar.url}
+                              src={user.avatar.url && user.avatar.url !== 'x' || NoAvatar }
                               alt="Avatar"
                             />
                           </Menu.Button>

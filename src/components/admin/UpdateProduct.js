@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductDetails, updateProduct, clearErrors } from '../../actions/productActions';
 import { UPDATE_PRODUCT_RESET } from '../../constants/productConstants'; 
 
-// import './admin.css';
 
 
 const UpdateProduct = ({ match, history }) => {
@@ -110,7 +109,7 @@ const UpdateProduct = ({ match, history }) => {
   return (
     <Fragment>
       <MetaData title={'Update Product'} />
-      <div className="row">
+      <div className="row pb-5">
         <div className="col-12 col-md-2">
           <Sidebar />
         </div>

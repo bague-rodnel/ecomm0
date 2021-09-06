@@ -5,13 +5,14 @@ import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateProfile, loadUser, clearErrors } from '../actions/userActions';
 import { UPDATE_PROFILE_RESET } from '../constants/userConstants';
+import defaultAvatar from '../images/no-img-avatar.png';
 
 const UpdateProfile = ({ history }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [avatar, setAvatar] = useState('');
-  const [avatarPreview, setAvatarPreview] = useState('/images/default_avatar.png');
+  const [avatarPreview, setAvatarPreview] = useState(defaultAvatar);
 
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const UpdateProfile = ({ history }) => {
       setFirstName(user.firstName);
       setLastName(user.lastName);
       setEmail(user.email);
-      setAvatarPreview(user.avatar.url);
+      setAvatarPreview(user.avatar.url && user.avatar.url !== 'x' || defaultAvatar);
     }
     
     if (error) {

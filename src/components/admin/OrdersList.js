@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllOrders, deleteOrder, clearErrors } from '../../actions/orderActions';
 import { DELETE_ORDER_RESET } from '../../constants/orderConstants';
 
-// import './admin.css';
 
 
 const OrdersList = ({ history }) => {
@@ -118,7 +117,7 @@ const OrdersList = ({ history }) => {
     <Fragment>
       <MetaData title={'All Orders'} />
 
-      <div className="row">
+      <div className="row pb-5">
         <div className="col-12 col-md-2">
           <Sidebar />
         </div>

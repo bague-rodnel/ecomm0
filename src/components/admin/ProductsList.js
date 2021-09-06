@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAdminProducts, deleteProduct, archiveProduct, unarchiveProduct, clearErrors } from '../../actions/productActions';
 import { DELETE_PRODUCT_RESET, ARCHIVE_PRODUCT_RESET, UNARCHIVE_PRODUCT_RESET } from '../../constants/productConstants';
 
-// import './admin.css';
 
 const ProductsList = ({ history }) => {
   const alert = useAlert();
@@ -142,7 +141,7 @@ const ProductsList = ({ history }) => {
   return (
     <Fragment>
       <MetaData title={'All Products'} />
-      <div className="row">
+      <div className="row pb-5">
         <div className="col-12 col-md-2">
           <Sidebar />
         </div>

@@ -8,7 +8,7 @@ import { getAdminProducts } from '../../actions/productActions';
 import { getAllOrders } from '../../actions/orderActions';
 import { getAllUsers } from '../../actions/userActions';
 
-import './admin.css';
+
 
 
 const Dashboard = () => {
@@ -34,7 +34,7 @@ const Dashboard = () => {
     <Fragment>
       <MetaData title={'Admin Dashboard'} />
 
-      <div className="row">
+      <div className="row pb-5">
         <div className="col-12 col-md-2">
           <Sidebar />
         </div>

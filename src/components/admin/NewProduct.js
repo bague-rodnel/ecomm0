@@ -90,7 +90,7 @@ const NewProduct = ({ history }) => {
   return (
     <Fragment>
       <MetaData title={'New Product'} />
-      <div className="row">
+      <div className="row pb-5">
         <div className="col-12 col-md-2">
           <Sidebar />
         </div>

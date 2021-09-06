@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './admin.css';
 
 const Sidebar = () => {
   return (

@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserDetails, updateUser, clearErrors } from '../../actions/userActions';
 import { UPDATE_USER_RESET } from '../../constants/userConstants';
 
-// import './admin.css';
 
 
 const UpdateUser = ({ match, history }) => {
@@ -67,7 +66,7 @@ const UpdateUser = ({ match, history }) => {
     <Fragment>
       <MetaData title={`Update User # ${userId}`} />
 
-        <div className="row">
+        <div className="row pb-5">
           <div className="col-12 col-md-2">
             <Sidebar />
           </div>

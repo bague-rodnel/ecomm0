@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllUsers, deleteUser, clearErrors } from '../../actions/userActions';
 import { DELETE_USER_RESET } from '../../constants/userConstants';
 
-// import './admin.css';
 
 
 const UsersList = () => {
@@ -99,7 +98,7 @@ const UsersList = () => {
     <Fragment>
       <MetaData title={'All Users'} />
 
-      <div className="row">
+      <div className="row pb-5">
         <div className="col-12 col-md-2">
           <Sidebar />
         </div>

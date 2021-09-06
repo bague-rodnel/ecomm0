@@ -11,8 +11,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllOrders, updateOrder, clearErrors, getOrderDetails } from '../../actions/orderActions';
 import { UPDATE_ORDER_RESET } from '../../constants/orderConstants';
 
-// import './admin.css';
-
 
 const ProcessOrder = ({ match, history }) => {
   
@@ -63,7 +61,7 @@ const ProcessOrder = ({ match, history }) => {
     <Fragment>
       <MetaData title={`Process Order # ${orderId}`} />
 
-        <div className="row">
+        <div className="row pb-5">
           <div className="col-12 col-md-2">
             <Sidebar />
           </div>
