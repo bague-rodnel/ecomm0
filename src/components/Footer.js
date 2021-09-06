@@ -6,7 +6,7 @@ import FooterLogo from './../images/Group-38.png';
 export default function Footer(){
 
     return(
-        <footer className="page-footer pt-12">
+        <footer className="page-footer">
             <div className="color w-full  text-white ">
               <div className="xl:px-40 pb-12 lg:px-20 md:px-10 sm:px-5 px-10">
                 <div className="w-full pt-12 flex flex-col sm:flex-row space-y-2 justify-start justify-between">

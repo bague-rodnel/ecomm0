@@ -49,6 +49,8 @@ import UpdateProfile from './pages/UpdateProfile';
 import ListOrders from './pages/ListOrders';
 import OrderDetails from './pages/OrderDetails';
 
+import PageNotFound from './pages/PageNotFound';
+
 
 //checkout process related
 import Cart from './components/cart/Cart';
@@ -56,7 +58,6 @@ import Shipping from './components/cart/Shipping';
 import ConfirmOrder from './components/cart/ConfirmOrder';
 import Payment from './components/cart/Payment';
 import OrderSuccess from './components/cart/OrderSuccess';
-
 
 
 
@@ -73,17 +74,18 @@ import { loadStripe } from '@stripe/stripe-js';
 
 export default function App(){
 
-  const [stripeAPIKey, setStripeAPIKey] = useState('pk_test_51JOMndGaIcykU8yAECuBAQrryn1oUmNvrhxRSu5owg64McO9BSzowuOlOiq7kngtBFi3r4tIZ3Io5b33k2BoG9zC00qPlep47U');
+  const [stripeAPIKey, setStripeAPIKey] = useState('');
 
   useEffect(() => {
     store.dispatch(loadUser());
 
-    // (async () => {
-    //   const { data } = await axios.get(`http://localhost:4000/api/payments/stripeapi`);
-    //   setStripeAPIKey(data.stripeAPIKey);
-    // })();
+    (async () => {
+      const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/payments/stripeapi`);
+      setStripeAPIKey(data.stripeAPIKey);
+    })();
 
   }, [])
+
 
   return(
       
@@ -125,14 +127,13 @@ export default function App(){
             <ProtectedRoute path="/admin/users" component={UsersList} isAdmin={true} exact />
             <ProtectedRoute path="/admin/users/:id" component={UpdateUser} isAdmin={true} exact />
             <ProtectedRoute path="/admin/reviews" component={ProductReviews} isAdmin={true} exact /> 
+            <Route path="*" component={PageNotFound} />
+            
             {stripeAPIKey && 
               <Elements stripe={loadStripe(stripeAPIKey)}>
                 <ProtectedRoute path="/order/payment" component={Payment} exact />
               </Elements>
             } 
-            <Route path="*">
-              {/* <PageNotFound /> */}
-          </Route>
          </Switch>
 
          <Footer />
