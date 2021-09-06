@@ -195,12 +195,13 @@ html {
   text-decoration: none;
 }
 
-#cus-navlink {
+.cus-navlink {
   color: #ffffff;
 }
 
-#cus-navlink:focus,
-#cus-navlink:hover {
+.cus-navlink:focus,
+.cus-navlink:hover,
+.cus-navlink:active {
   background-color: rgb(249, 249, 249);
   color: rgba(8, 138, 189, 1);
 }

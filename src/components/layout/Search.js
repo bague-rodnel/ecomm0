@@ -19,13 +19,15 @@ const Search = ({ history }) => {
         <input
           type="text"
           id="search_field"
-          className="form-control"
+          className="form-control rounded-left z-1"
           placeholder="Enter Product Name ..."
           onChange={(e) => setKeyword(e.target.value)}
         />
         <div className="input-group-append">
-          <button className="btn btn-outline-light z-0">
+
+          <button className="btn btn-outline-light z-0 rounded-right">
             <i className="fa fa-search" aria-hidden="true"></i>
+
           </button>
         </div>
       </div>

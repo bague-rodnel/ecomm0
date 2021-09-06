@@ -66,19 +66,19 @@ export default function AppNavBar() {
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-5 flex items-baseline space-x-4">
-                      <Nav.Link as={NavLink} to="/" id="cus-navlink" className=" px-3 py-2 rounded-md font-medium ">
+                      <Nav.Link as={NavLink} to="/" id="navlink-home" className="cus-navlink px-3 py-2 rounded-md font-medium ">
                               Home
                       </Nav.Link>
 
-                      <Nav.Link as={NavLink} to="/products" id="cus-navlink" className="px-3 py-2 rounded-md font-medium">
+                      <Nav.Link as={NavLink} to="/products" id="navlink-products" className="cus-navlink px-3 py-2 rounded-md font-medium">
                         
                        Products
 
                       </Nav.Link>
 
-                      <Nav.Link as={NavLink} to="/about" id="cus-navlink" className="px-3 py-2 rounded-md font-medium">
+                      <Nav.Link as={NavLink} to="/about" id="navlink-about" className="cus-navlink px-3 py-2 rounded-md font-medium">
                         
-                        About Zuittsu
+                        About
 
                       </Nav.Link >
 
@@ -94,7 +94,7 @@ export default function AppNavBar() {
                       
 
 
-                      <Route id="cus-navlink" render={({ history }) => <Search history={history} />} />
+                      <Route id="search" render={({ history }) => <Search history={history} />} />
 
                   </div>
                 </div>
@@ -106,11 +106,11 @@ export default function AppNavBar() {
                     
                   <Nav.Link
 
-                      id="cus-navlink"
+                      id="navlink-cart"
                       as={NavLink}
                       to="#"
                       onClick={() => dispatch(toggleCart())}
-                      className=" p-1 rounded-full  d-flex"
+                      className=" p-1 rounded-full  d-flex cus-navlink"
                     >
 
                       <button class="  text-white position-relative">
@@ -135,11 +135,11 @@ export default function AppNavBar() {
                      {
                   !user ? (
                     <Fragment>
-                      <Nav.Link as={NavLink} to="/login" id="cus-navlink" className="px-3 py-2 rounded-md font-medium  ">
+                      <Nav.Link as={NavLink} to="/login" id="navlink-login" className="cus-navlink px-3 py-2 rounded-md font-medium  ">
                         Login
                       </Nav.Link>
 
-                      <Nav.Link as={NavLink} to="/register" id="cus-navlink" className="px-3 py-2 rounded-md font-medium   ">
+                      <Nav.Link as={NavLink} to="/register" id="navlink-signin" className="cus-navlink px-3 py-2 rounded-md font-medium   ">
                         Sign up
                       </Nav.Link>
                     </Fragment>
@@ -278,18 +278,18 @@ export default function AppNavBar() {
 
                     <Nav.Link as={NavLink} to="/about" className="px-3 py-2 rounded-md font-medium text-gray-10  ">
                       
-                      About Zuittsu
+                      About
 
                     </Nav.Link>
 
 
                        <div>
                               <div className="pb-4 border-b">
-                                <Nav.Link as={NavLink} to="/" id="cus-navlink" className="px-3 py-2 rounded-md font-medium ">
+                                <Nav.Link as={NavLink} to="/" id="navlink-home" className="cus-navlink px-3 py-2 rounded-md font-medium ">
                                   Home
                                 </Nav.Link>
 
-                                <Nav.Link as={NavLink} to="/products" id="cus-navlink" className="px-3 py-2 rounded-md font-medium    ">
+                                <Nav.Link as={NavLink} to="/products" id="navlink-products" className="px-3 py-2 rounded-md font-medium    ">
                                   
                                   Products
                                 </Nav.Link>
@@ -344,12 +344,12 @@ export default function AppNavBar() {
                            
                                 <Nav.Link
 
-                                  id="cus-navlink"
+                                  id="navlink-cart"
                                   as={NavLink}
                                   to="#!"
                                   onClick={() => dispatch(toggleCart())}
 
-                                  className=" p-1 rounded-full "
+                                  className=" p-1 rounded-full cus-navlink"
                                 >
                                   <button class=" text-white position-relative">
                                     <ShoppingCartIcon id="cus-iconCart" className=" h-6 w-6" aria-hidden="true" />
@@ -393,7 +393,7 @@ export default function AppNavBar() {
 
                                  <Nav.Link 
 
-                                   id="cus-navlink"
+                                   id="nav-link-profile"
                                    as={NavLink}
 
                                    to="/me"
@@ -403,7 +403,7 @@ export default function AppNavBar() {
                                 </Nav.Link>
 
                                  <Nav.Link 
-                                   id="cus-navlink"
+                                   id="navlink-signout"
                                    as={NavLink}
 
                                    to="/logout"
