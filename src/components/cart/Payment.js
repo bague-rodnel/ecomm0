@@ -5,7 +5,7 @@ import CheckoutSteps from './CheckoutSteps';
 
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
-import { createOrder, clearErrors } from '../../actions/orderActions';
+import { createOrder, clearErrors, myOrders } from '../../actions/orderActions';
 import { emptyCart } from '../../actions/cartActions';
 
 import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement } from '@stripe/react-stripe-js';
@@ -127,6 +127,7 @@ const Payment = ({ history }) => {
             timer: 1500
           })
 
+          dispatch(myOrders());
           history.push('/orders/me');
         } else {
           alert.error('There is some issue while processing the payment');
