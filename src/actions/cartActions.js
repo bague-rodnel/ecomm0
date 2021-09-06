@@ -25,6 +25,7 @@ export const addItemToCart = (id, quantity, user) => async (dispatch, getState) 
   
   const token = await store.getState().auth.token;
 
+
   const config = {
     headers: {
       'Content-Type': 'application/json',

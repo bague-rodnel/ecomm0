@@ -23,7 +23,7 @@ import NoAvatar from '../images/no-img-avatar.png'
 //ICON
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon, SearchIcon, ShoppingCartIcon } from '@heroicons/react/outline'
-// import { TOGGLE_CART_OVERLAY } from '../constants/cartConstants';
+import { TOGGLE_CART_OVERLAY } from '../constants/cartConstants';
 
 
 function classNames(...classes) {
@@ -95,7 +95,7 @@ export default function AppNavBar() {
                       
                       as={NavLink}
                       to="#"
-                      onClick={() => dispatch(toggleCart())}
+                      onClick={() => dispatch({ type: TOGGLE_CART_OVERLAY })}
                       className=" p-1 rounded-full text-gray-400 hover:text-white focus:outline-none d-flex"
                     >
 
@@ -300,7 +300,8 @@ export default function AppNavBar() {
                             <div className="flex items-center px-5">
 
                                 <div className="flex-shrink-0">
-                                   <img className="h-10 w-10 rounded-full" src={user.avatar.url}  alt="" /> {/*INSERT PICTURE HERE*/}
+                                   <img className="h-10 w-10 rounded-full" 
+                                   src={user.avatar.url && user.avatar.url !== 'x' || NoAvatar }  alt="" /> {/*INSERT PICTURE HERE*/}
                                 </div>
 
                                 <div className="ml-3">
@@ -315,7 +316,7 @@ export default function AppNavBar() {
                       
                                   as={NavLink}
                                   to="#!"
-                                  onClick={() => dispatch(toggleCart())}
+                                  onClick={() => dispatch({ type: TOGGLE_CART_OVERLAY })}
 
                                   className=" p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >

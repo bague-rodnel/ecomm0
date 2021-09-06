@@ -53,13 +53,15 @@ export default function MailContainer(){
 						/>
 						</div>
 
-						<div className="pt-5 px-32 rounded-md text-center">
+						<div className="pt-5 px-10 rounded-md text-center">
+
 							<a
 							href="#"
 								className="cuz-button inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-black hover:bg-blue-500 "
 								>
 								JOIN NOW
 							</a>
+							
 					</div>
 					</form>
 				</div>

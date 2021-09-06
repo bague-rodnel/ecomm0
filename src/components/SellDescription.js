@@ -10,7 +10,7 @@ export default function InfoBlocks(){
 		<>
 
 			<Container fluid>
-				<Row className="justify-content-center md:-mb-40">
+				<Row className="justify-content-center md:-mb-40 sell-description">
 					<Container>
 						<Row className="justify-content-center">
 							<Col xs={12} md={3} id="protein" className="mx-3 p-3">

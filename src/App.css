@@ -323,6 +323,17 @@ html {
   }
 }
 
+/* SELL DESCRIPTION */
+@media (max-width:  1279px) {
+  .sell-description h3 {
+    font-size: 4rem;
+  }
+
+  .sell-description p {
+    font-size:  2rem;
+  }
+}
+
 /*Email Container*/
 .form-text1 {
   font-family: Saira Condensed;
