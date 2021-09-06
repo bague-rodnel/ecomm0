@@ -26,7 +26,7 @@ const UpdateProfile = ({ history }) => {
       setFirstName(user.firstName);
       setLastName(user.lastName);
       setEmail(user.email);
-      setAvatarPreview(user.avatar.url && user.avatar.url !== 'x' || defaultAvatar);
+      setAvatarPreview(user.avatar.url !== 'x' && user.avatar.url || defaultAvatar);
 
     }
     

@@ -139,6 +139,7 @@ const Payment = ({ history }) => {
     }
   }
 
+  
 
   return (
     <Fragment>

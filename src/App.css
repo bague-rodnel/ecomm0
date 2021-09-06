@@ -8,7 +8,36 @@
   box-sizing: border-box;
 }
 
-:after, :before {
+.about-text {
+  padding-top: 2rem;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 39px;
+  /* or 130% */
+
+  letter-spacing: 0.1em;
+
+  color: #e5e5e5;
+}
+.about-title {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 39px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  text-decoration-line: underline;
+
+  color: #ffffff;
+}
+
+:after,
+:before {
   box-sizing: border-box;
 }
 
@@ -114,7 +143,7 @@ html {
 
 .active-step {
   /*background: #fa9c23;*/
-  background: #6DCCDE;
+  background: #6dccde;
   color: #fff;
 }
 
@@ -123,7 +152,7 @@ html {
   width: 0;
   border-top: 20px solid transparent;
   /*border-left: 15px solid #fa9c23;*/
-  border-left:  15px solid #6DCCDE;
+  border-left: 15px solid #6dccde;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -132,10 +161,10 @@ html {
   width: 0;
   float: left;
   /*border-top: 20px solid #fa9c23;*/
-  border-top:  20px solid #6DCCDE;
+  border-top: 20px solid #6dccde;
   border-left: 15px solid #fff;
   /*border-bottom: 20px solid #fa9c23;*/
-  border-bottom:  20px solid #6DCCDE;
+  border-bottom: 20px solid #6dccde;
   margin-right: -1px;
 }
 
@@ -166,13 +195,20 @@ html {
   text-decoration: none;
 }
 
-.nav-link {
+#cus-navlink {
   color: #ffffff;
 }
 
-.nav-link:focus,
-.nav-link:hover {
-  background-color: rgba(8, 138, 189, 1);
+#cus-navlink:focus,
+#cus-navlink:hover {
+  background-color: rgb(249, 249, 249);
+  color: rgba(8, 138, 189, 1);
+}
+
+#cus-iconCart:focus,
+#cus-iconCart:hover {
+  background-color: rgb(249, 249, 249);
+  color: rgba(8, 138, 189, 1);
 }
 
 /*HERO TEXT*/
@@ -323,17 +359,6 @@ html {
   }
 }
 
-/* SELL DESCRIPTION */
-@media (max-width:  1279px) {
-  .sell-description h3 {
-    font-size: 4rem;
-  }
-
-  .sell-description p {
-    font-size:  2rem;
-  }
-}
-
 /*Email Container*/
 .form-text1 {
   font-family: Saira Condensed;
@@ -467,8 +492,8 @@ html {
 
 /* PAGE NOT FOUND */
 .not-found {
-  height: 75vh;
-  position:  relative;
+  height: 100vh;
+  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(images/404bg.png);
@@ -476,10 +501,9 @@ html {
 }
 
 .error-container .error-content {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
-
 
 @media (min-width: 300px) {
   .about-hero {
@@ -488,9 +512,6 @@ html {
     padding: 15px 15px 10px 15px;
     margin: 15px 15px 10px 15px;
     text-align: center;
-  }
-  .about-text {
-    padding-top: 2rem;
   }
   .cuz-padding {
     padding: 0px;
@@ -646,6 +667,25 @@ html {
   }
   .cus-col {
     padding-right: 2rem;
+  }
+  #nutritionSmall {
+    display: none;
+  }
+}
+
+/* SELL DESCRIPTION */
+@media (max-width: 1279px) {
+  .sell-description h3 {
+    font-size: 4rem;
+  }
+  .sell-description p {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #nutritionLarge {
+    display: none;
   }
 }
 

@@ -379,7 +379,7 @@ export default function AppNavBar() {
                                     as={NavLink}
                                     to="/admin/dashboard"
                                     className="px-3 py-2 rounded-md font-medium text-gray-100 hover:bg-blue-300">
-                                        Admin Dashboardf
+                                        Admin Dashboard
                                   </Nav.Link>
                                   : 
                                   <Nav.Link 

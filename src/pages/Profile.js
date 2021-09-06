@@ -41,28 +41,7 @@ const Profile = () => {
                                      </button>
                                   </Link>
 
-                                  <div className="flex justify-content-center">
-                                    { !user.isAdmin && (
-                                      <Link to="/orders/me" className="py-2">
-                                        <button
-                                          type="submit"
-                                          className=" py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-dark hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                          >
-                                            My Orders
-                                        </button>
-                                      </Link>
-                                    )}
-                                  </div>
-                                  <div className="flex justify-content-center">
-                                    <Link to="/password/update" className="py-2">
-                                      <button
-                                        type="submit"
-                                        className=" py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-dark hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                        >
-                                        Edit Login
-                                     </button>
-                                    </Link>
-                                  </div>
+                                  
                                   
                                 </div>
                           </div>
@@ -128,10 +107,10 @@ const Profile = () => {
                              </div>
 
                          </div>
-                         {
-                             !user.isAdmin &&(
-                               <div className="text-right py-5 sm:px-6">
-
+                        
+                         <div className="text-right py-5 sm:px-6">
+                            {
+                              !user.isAdmin &&(
                                <Link to="/orders/me">  
 
                                    <button
@@ -143,20 +122,21 @@ const Profile = () => {
 
                                </Link> 
                          
-                          
-                               <Link to="/password/update" >  
+                     
+                           )}
 
-                                   <button
-                                   type="submit"
-                                   className=" cus-login-register inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                   >
-                                       Change Password
-                                   </button>
+                           <Link to="/password/update" >  
 
-                               </Link> 
-                              </div>
+                               <button
+                               type="submit"
+                               className=" cus-login-register inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                               >
+                                   Change Password
+                               </button>
 
-                         )}
+                           </Link> 
+                        </div>
+
                       </div>
                   </div>
               </div>
