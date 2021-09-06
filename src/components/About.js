@@ -7,7 +7,7 @@ export default function HereSection(){
 	return(
 
 
-		<div className="container py-5">
+		<div className="container pt-10 pb-32">
 			<div className="row align-items-center justify-content-center">
 				<div className="col-md-4 col-8 text-right mb-5 mb-md-0">
 					<Pocho/>
