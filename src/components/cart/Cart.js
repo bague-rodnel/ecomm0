@@ -38,7 +38,7 @@ const Cart = ({ history }) => {
   return (
     <Fragment>
       <MetaData title={'Your cart'} />
-      <div className="container container-fluid">
+      <div className="container container-fluid mb-5">
       { cartItems.length === 0 ? <h2 className="mt-5">Your Cart is empty</h2> : (
         <Fragment>
           <h2 className="mt-5 h3 py-3 border-bottom">Your Cart: <b>{cartItems.length} item(s)</b></h2>
