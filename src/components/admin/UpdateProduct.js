@@ -43,6 +43,7 @@ const UpdateProduct = ({ match, history }) => {
       setPrice(product.price);
       setDescription(product.description);
       setCategory(product.category);
+      setFilters(product.filters);
       setStock(product.stock);
       setOldImages(product.images);  
     }
