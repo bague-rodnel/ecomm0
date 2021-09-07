@@ -78,8 +78,8 @@ export const login = (email, password) => async (dispatch) => {
     // dispatch(loadShippingInfo(data.user));
   } catch (error) {
     dispatch({
-      type: LOGIN_FAIL
-      // ,  payload: error.response.data.message
+      type: LOGIN_FAIL,
+      payload: error.response.data.message
     })
   }
 }
