@@ -287,13 +287,13 @@ export default function AppNavBar() {
                       (
                           
                           <div className="flex">
-                            <Nav.Link as={NavLink} to="/login" className="px-3 py-2 rounded-md font-medium text-gray-10  ">
+                            <Nav.Link as={NavLink} to="/login" className="px-3 py-2 rounded-md font-medium text-gray-100  ">
                               Login
                             </Nav.Link>
                             <Link to="#!" className="px-3 py-2 rounded-md font-medium text-gray-400  ">
                               /
                             </Link>
-                            <Nav.Link as={NavLink} to="/register" className="px-3 py-2 rounded-md font-medium text-gray-10  ">
+                            <Nav.Link as={NavLink} to="/register" className="px-3 py-2 rounded-md font-medium text-gray-100  ">
                               Sign up
                             </Nav.Link>
                           </div>
