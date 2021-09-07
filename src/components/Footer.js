@@ -15,19 +15,19 @@ export default function Footer(){
                     <img src={FooterLogo} alt="" className="footer-logo w-32" />
                    
                   </div>
-                  <div className="cus-col w-full sm:w-1/5 flex flex-col space-y-4">
+                  <div className="mt-5 cus-col w-full sm:w-1/5 flex flex-col space-y-4">
                     <a className="footer-title">Vital Pet </a>
                     <a className="footer-text">About</a>
                     <a className="footer-text">Nutrition</a>
                     <a className="footer-text">Ingredients</a>
                   </div>
-                  <div className="cus-col w-full sm:w-1/5 flex flex-col space-y-4">
+                  <div className="mt-5 cus-col w-full sm:w-1/5 flex flex-col space-y-4">
                     <a className="footer-title">Our Products</a>
                     <a className="footer-text">For Dogs</a>
                     <a className="footer-text">For Cats</a>
                     <a className="footer-text">Treats</a>
                   </div>
-                  <div className="cus-col w-full sm:w-1/5 flex flex-col space-y-4">
+                  <div className="mt-5 cus-col w-full sm:w-1/5 flex flex-col space-y-4">
                       <a className="footer-title ">Follow Us</a>
                       <i className="cus-icon bi bi-facebook ">
 
