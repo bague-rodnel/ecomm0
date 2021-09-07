@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import {  NavLink, Link } from 'react-router-dom';
 import {  Nav } from 'react-bootstrap'
 import { Route } from 'react-router-dom';
+import MetaData from './layout/MetaData';
 
 
 
@@ -43,6 +44,8 @@ export default function AppNavBar() {
   }
 
   return (
+    <Fragment>
+      <MetaData title={'Zuittzu'} />
     <Disclosure as="nav" className="color">
       {({ open }) => (
         <>
@@ -404,5 +407,7 @@ export default function AppNavBar() {
         </>
       )}
     </Disclosure>
+    </Fragment>
+    
   )
 }

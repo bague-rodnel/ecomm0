@@ -27,7 +27,7 @@ const UpdateProfile = ({ history }) => {
       setLastName(user.lastName);
       setEmail(user.email);
       setAvatarPreview(user.avatar.url !== 'x' && user.avatar.url || defaultAvatar);
-
+      setAvatar(user.avatar.url);
     }
     
     if (error) {
@@ -147,7 +147,6 @@ const UpdateProfile = ({ history }) => {
                                name="avatar"
                                type="file"
                                accept="images/*"
-                               required
                                onChange={onChange}
                                className="sr-only"
                                 />
