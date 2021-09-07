@@ -17,7 +17,7 @@ const UpdateProduct = ({ match, history }) => {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [stock, setStock] = useState(0);
-  const [seller, setSeller] = useState(''); // remove later
+  const [filters, setFilters] = useState('');
   const [images, setImages] = useState([]);
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
@@ -75,7 +75,7 @@ const UpdateProduct = ({ match, history }) => {
     formData.set('description', description);
     formData.set('category', category);
     formData.set('stock', stock);
-    formData.set('seller', seller);
+    formData.set('filters', filters);
 
     images && images.forEach( image => {
       formData.append('images', image);
@@ -128,6 +128,7 @@ const UpdateProduct = ({ match, history }) => {
                 <div className="form-group mb-3">
                   <label htmlFor="name_field">Name</label>
                   <input
+                    required
                     type="text"
                     id="name_field"
                     className="form-control"
@@ -139,6 +140,7 @@ const UpdateProduct = ({ match, history }) => {
                 <div className="form-group mb-3">
                   <label htmlFor="price_field">Price</label>
                   <input
+                    required
                     type="text"
                     id="price_field"
                     className="form-control"
@@ -150,12 +152,26 @@ const UpdateProduct = ({ match, history }) => {
                 <div className="form-group mb-3">
                   <label htmlFor="description_field">Description</label>
                   <textarea 
+                    required
                     className="form-control" 
                     id="description_field" 
                     rows="8"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}>
                   </textarea>
+                </div>
+
+                <div className="form-group mb-3">
+                  <label htmlFor="filters_field">Filter Tags</label>
+                  <input
+                    required
+                    type="text"
+                    id="filters_field"
+                    className="form-control"
+                    value={filters}
+                    onChange={(e) => setFilters(e.target.value)}
+                    title="Comma separated tags"
+                  />
                 </div>
 
                 <div className="form-group mb-3">
@@ -171,6 +187,7 @@ const UpdateProduct = ({ match, history }) => {
                 <div className="form-group mb-3">
                   <label htmlFor="stock_field">Stock</label>
                   <input
+                    required
                     type="number"
                     id="stock_field"
                     className="form-control"
