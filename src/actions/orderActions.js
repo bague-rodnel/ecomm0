@@ -40,7 +40,8 @@ export const createOrder = (order) => async (dispatch)  => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -73,7 +74,8 @@ export const myOrders = () => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -104,7 +106,8 @@ export const getOrderDetails = (id) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -134,7 +137,8 @@ export const getAllOrders = () => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -164,7 +168,8 @@ export const updateOrder = (id, orderData) => async (dispatch)  => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -197,7 +202,8 @@ export const deleteOrder = (id) => async (dispatch)  => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 

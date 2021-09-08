@@ -62,7 +62,8 @@ const Card = ({ history }) => {
       const config = {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'Authorization': `Bearer ${token}`,
+          'API_KEY': `${process.env.REACT_APP_API_KEY}`
         }
       }
 

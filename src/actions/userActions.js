@@ -96,7 +96,8 @@ export const register = (userData) => async (dispatch) => {
     // }
     const config = {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -127,7 +128,8 @@ export const loadUser = () => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -164,7 +166,9 @@ export const getAllUsers = () => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
+
       }
     }
 
@@ -218,7 +222,8 @@ export const updateProfile = (userData) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
 
       }
     }
@@ -251,7 +256,9 @@ export const updatePassword = (passwords) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
+
       }
     }
 
@@ -281,7 +288,9 @@ export const forgotPassword = (email) => async (dispatch) => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
+
       }
     }
 
@@ -314,7 +323,9 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
+
       }
     }
 
@@ -346,7 +357,9 @@ export const updateUser = (id, userData) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
+
       }
     }
 
@@ -378,7 +391,9 @@ export const getUserDetails = (id) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
+
       }
     }
 
@@ -410,7 +425,9 @@ export const deleteUser = (id) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
+        
       }
     }
 

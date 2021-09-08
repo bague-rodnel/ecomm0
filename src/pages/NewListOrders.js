@@ -99,10 +99,12 @@ const NewListOrders = () =>{
     return (
         <Fragment>
         { loading ? <Loader /> : 
-            <DataTable
-            columns={columns}
-            data={setOrders()}
-            />
+            <div className="mb-3">
+                <DataTable
+                    columns={columns}
+                    data={setOrders()}
+                />
+            </div>
         }
         </Fragment>
     );

@@ -29,7 +29,8 @@ export const addItemToCart = (id, quantity, user) => async (dispatch, getState) 
   const config = {
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
+      'Authorization': `Bearer ${token}`,
+      'API_KEY': `${process.env.REACT_APP_API_KEY}`
     }
   }
   // const { data } = await axios.get(`${API}/api/products/${id}`, config);

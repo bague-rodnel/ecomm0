@@ -127,7 +127,8 @@ export const newProduct = (productData) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -158,7 +159,8 @@ export const updateProduct = (id, productData) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -186,7 +188,8 @@ export const archiveProduct = (id) => async (dispatch) => {
 
     const config = {
       headers: {
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -217,7 +220,8 @@ export const unarchiveProduct = (id) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -246,7 +250,8 @@ export const deleteProduct = (id) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -277,7 +282,8 @@ export const newReview = (reviewData) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -306,7 +312,8 @@ export const getAdminProducts = () => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -337,7 +344,8 @@ export const getProductReviews = (productId) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
@@ -368,7 +376,8 @@ export const deleteReview = (id, productId) => async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'API_KEY': `${process.env.REACT_APP_API_KEY}`
       }
     }
 
