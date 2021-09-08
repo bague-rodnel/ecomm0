@@ -53,6 +53,7 @@ import PageNotFound from './pages/PageNotFound';
 
 
 //checkout process related
+import Card from './components/cart/Card';
 import Cart from './components/cart/Cart';
 import Shipping from './components/cart/Shipping';
 import ConfirmOrder from './components/cart/ConfirmOrder';
@@ -115,7 +116,7 @@ export default function App(){
             <ProtectedRoute path="/me/update" component={UpdateProfile} exact />
             <ProtectedRoute path="/order/shipping" component={Shipping } exact />
             <ProtectedRoute path="/order/confirm" component={ConfirmOrder} exact />
-            <ProtectedRoute path="/order/success" component={OrderSuccess} exact />
+            <ProtectedRoute path="/order/card" component={Card} exact />
             <ProtectedRoute path="/orders/me" component={ListOrders} isAdmin={false} exact />
             <ProtectedRoute path="/orders/:id" component={OrderDetails} exact />
             <ProtectedRoute path="/admin/dashboard" component={Dashboard} isAdmin={true} exact />
@@ -127,7 +128,7 @@ export default function App(){
             <ProtectedRoute path="/admin/users" component={UsersList} isAdmin={true} exact />
             <ProtectedRoute path="/admin/users/:id" component={UpdateUser} isAdmin={true} exact />
             <ProtectedRoute path="/admin/reviews" component={ProductReviews} isAdmin={true} exact /> 
-            
+            <Route path="*" component={PageNotFound} exact />
             
             {stripeAPIKey && 
               <Elements stripe={loadStripe(stripeAPIKey)}>
