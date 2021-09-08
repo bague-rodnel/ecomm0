@@ -48,31 +48,27 @@ import UpdatePassword from './pages/UpdatePassword';
 import UpdateProfile from './pages/UpdateProfile';
 import ListOrders from './pages/ListOrders';
 import OrderDetails from './pages/OrderDetails';
-import NewListOrders from './pages/NewListOrders';
 
 import PageNotFound from './pages/PageNotFound';
 
 
 //checkout process related
-import Card from './components/cart/Card';
 import Cart from './components/cart/Cart';
 import Shipping from './components/cart/Shipping';
 import ConfirmOrder from './components/cart/ConfirmOrder';
 import Payment from './components/cart/Payment';
-import OrderSuccess from './components/cart/OrderSuccess';
-
-
 
 import ProtectedRoute from './components/route/ProtectedRoute';
+
 import { loadUser } from './actions/userActions';
 import { loadCartItems, loadShippingInfo } from './actions/cartActions';
 import store from './store';
 
 import './App.css';
 import axios from 'axios';
+
+import ScrollToTop from './components/util/ScrollToTop';
  
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
 
 export default function App(){
 
@@ -88,44 +84,49 @@ export default function App(){
       
      
       <Router>
+
+        <ScrollToTop />
         <AppNavBar />
         <ProductCart />
          <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/products" component={Product} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/register" component={Register} />
 
-            <Route path="/products" component={Catalog} exact />
-            <Route path="/cart" component={Cart} isAdmin={false} exact />
-            {/* <Route path="/login" component={Login} exact /> */}
-            {/* <Route path="/register" component={Register} exact /> */}
-            <Route path="/search/:keyword" component={Catalog} exact />
-            <Route path="/products/:id" component={ProductDetails} exact />
-            <Route path="/password/forgot" component={ForgotPassword} exact />
-            <Route path="/password/reset/:token" component={NewPassword} exact />
-            <ProtectedRoute path="/password/update" component={UpdatePassword} exact />
-            <ProtectedRoute path="/me" component={Profile} exact />
-            <ProtectedRoute path="/me/update" component={UpdateProfile} exact />
-            <ProtectedRoute path="/order/shipping" component={Shipping } exact />
-            <ProtectedRoute path="/order/confirm" component={ConfirmOrder} exact />
-            <ProtectedRoute path="/orders/me" component={NewListOrders} isAdmin={false} exact />
-            {/*<ProtectedRoute path="/orders/me2" component={NewListOrders} isAdmin={false} exact />*/}
-            <ProtectedRoute path="/orders/:id" component={OrderDetails} exact />
-            <ProtectedRoute path="/admin/dashboard" component={Dashboard} isAdmin={true} exact />
-            <ProtectedRoute path="/admin/orders" component={OrdersList} isAdmin={true} exact />
-            <ProtectedRoute path="/admin/orders/:id" component={ProcessOrder} isAdmin={true} exact />
-            <ProtectedRoute path="/admin/products" component={ProductsList} isAdmin={true} exact />
-            <ProtectedRoute path="/admin/products/add" component={NewProduct} isAdmin={true} exact />
-            <ProtectedRoute path="/admin/products/:id" component={UpdateProduct} isAdmin={true} exact />
-            <ProtectedRoute path="/admin/users" component={UsersList} isAdmin={true} exact />
-            <ProtectedRoute path="/admin/users/:id" component={UpdateUser} isAdmin={true} exact />
-            <ProtectedRoute path="/admin/reviews" component={ProductReviews} isAdmin={true} exact /> 
-            <ProtectedRoute path="/order/payment" component={Payment} exact />
-         
-            <Route path="*" component={PageNotFound} exact />
+            <Route exact path="/cart" component={Cart} isAdmin={false}  />
+            <Route exact path="/search/:keyword" component={Catalog} />
+            <Route exact path="/products" component={Catalog} />
+            <Route exact path="/products/:id" component={ProductDetails} />
+
+            <Route exact path="/password/forgot" component={ForgotPassword} />
+            <Route exact path="/password/reset/:token" component={NewPassword} />
+            <ProtectedRoute exact path="/password/update" component={UpdatePassword} />
+
+            <ProtectedRoute exact path="/me" component={Profile} />
+            <ProtectedRoute exact path="/me/update" component={UpdateProfile} />
+
+            <ProtectedRoute exact path="/order/shipping" component={Shipping } />
+            <ProtectedRoute exact path="/order/confirm" component={ConfirmOrder} />
+            <ProtectedRoute exact path="/order/payment" component={Payment} />
+            <ProtectedRoute exact path="/orders/me" component={ListOrders} isAdmin={false} />
+            <ProtectedRoute exact path="/orders/:id" component={OrderDetails} />
+
+            <ProtectedRoute exact path="/admin/dashboard" component={Dashboard} isAdmin={true} />
+
+            <ProtectedRoute exact path="/admin/orders" component={OrdersList} isAdmin={true} />
+            <ProtectedRoute exact path="/admin/orders/:id" component={ProcessOrder} isAdmin={true} />
+
+            <ProtectedRoute exact path="/admin/products" component={ProductsList} isAdmin={true} />
+            <ProtectedRoute exact path="/admin/products/add" component={NewProduct} isAdmin={true} />
+            <ProtectedRoute exact path="/admin/products/:id" component={UpdateProduct} isAdmin={true} />
+
+            <ProtectedRoute exact path="/admin/users" component={UsersList} isAdmin={true} />
+            <ProtectedRoute exact path="/admin/users/:id" component={UpdateUser} isAdmin={true} />
+            <ProtectedRoute exact path="/admin/reviews" component={ProductReviews} isAdmin={true} /> 
+
+            <Route exact path="*" component={PageNotFound} />
             
          </Switch>
 

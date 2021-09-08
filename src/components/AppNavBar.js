@@ -55,17 +55,20 @@ export default function AppNavBar() {
               {/*START*/}
               <div className="flex items-center">
                 <div className="flex-shrink-0 flex items-center">
+                  <Link to="/">
                    <img
                       className="block h-8 w-8"
                       src={Logo}
                       alt="Zuittzu"
                     />
-
+                  </Link>
+                  <Link>
                     <img
                       className="hidden lg:block h-8 w-auto"
                       src={LogoName}
                       alt="Zuittzu"
                     />
+                  </Link>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-5 flex items-baseline space-x-4">
@@ -342,15 +345,6 @@ export default function AppNavBar() {
                                     </span>}
                                   </button>
                                 </Nav.Link>
-
-
-                                {/* <Link to="/cart" style={{ textDecoration: 'none' }} className="mr-2">
-                                  <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                                  <span id="cart_count">
-                                    { ( !cartItems.length ) ? 0
-                                      : cartItems.reduce((sum, item) => (sum + item.quantity), 0) }
-                                  </span>
-                                </Link> */}
 
                             </div>
 

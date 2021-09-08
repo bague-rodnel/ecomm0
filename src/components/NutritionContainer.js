@@ -10,7 +10,7 @@ export default function Nutrition(){
 
 	return(
 
-		<div className="container py-5">
+		<div id="nutrition" className="container py-5">
 			<div className="row align-items-center justify-content-center">
 				<h2 className="mb-5 text-center text-hero">Nutrition Done The Right Way</h2>
 				<picture>

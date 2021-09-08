@@ -11,6 +11,7 @@ import { REGISTER_USER_RESET } from '../constants/userConstants';
 
 
 export default function Example({ history }) {
+  const defaultIMG = 'M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z';
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -18,7 +19,7 @@ export default function Example({ history }) {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const [avatar, setAvatar] = useState('');
-  const [avatarPreview, setAvatarPreview] = useState('M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z');
+  const [avatarPreview, setAvatarPreview] = useState(defaultIMG);
 
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -83,15 +84,18 @@ export default function Example({ history }) {
   return (
     <Fragment>
       <MetaData title={'Register User'} />
-      <div className="mt-10 sm:mt-0">
+
+      <div className="mt-10 mb-5 sm:mt-0">
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
-            <div className="px-4 pt-5 sm:px-0">
-              <h3 className="text-2xl font-medium leading-6 text-gray-900">Personal Information</h3>
-              <p className="mt-1 text-md text-gray-600">Use a permanent email address where you can receive mail.</p>
+            <div className="h-100 px-4 pt-5 sm:px-0 flex flex-col justify-evenly">
+              <div>
+                <h3 className="mb-3 text-2xl font-medium leading-6 text-gray-900">Personal Information</h3>
+                <p className="mt-1 text-md text-gray-600">Use a permanent email address where you can receive mail.</p>
+              </div>
               <div className="container">
                 <div className="row justify-content-center">
-                  <div className="col-md-8">
+                  <div className="">
                     <PocholoBanner />
                   </div>
                 </div>
@@ -134,7 +138,7 @@ export default function Example({ history }) {
                       />
                     </div>
           
-                    <div className="col-span-6 sm:col-span-4">
+                    <div className="col-span-6 sm:col-span-6">
                       <label htmlFor="email-address" className="block text-lg font-medium text-gray-700">
                         Email address
                       </label>
@@ -178,85 +182,68 @@ export default function Example({ history }) {
                   
 
                     <div className="col-span-6 sm:col-span-4">
-                     <span className="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
-                        <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                          <path d={avatarPreview} />
-                        </svg>
-                      </span>                      
+                       <div className="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                          { avatarPreview === defaultIMG ? 
+                            <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                              <path d={avatarPreview} />
+                            </svg>
+
+                            : 
+
+                            <figure className='avatar item-rtl'>
+                              <img
+                                src={avatarPreview}
+                                className='rounded-circle'
+                                alt='Avatar Preview'
+                              />
+                            </figure>
+                          }
+                        
+                      </div>                      
                       <label className="block text-sm font-medium text-gray-700">AVATAR</label>
-                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                      <div className="space-y-1 text-center">
-                        <svg
-                          className="mx-auto h-12 w-12 text-gray-400"
-                          stroke="currentColor"
-                          fill="none"
-                          viewBox="0 0 48 48"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                            strokeWidth={2}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                        <div className="flex text-sm text-gray-600">
-                          <label
-                            htmlFor="file-upload"
-                            className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+
+                      <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                        <div className="space-y-1 text-center">
+                          <svg
+                            className="mx-auto h-12 w-12 text-gray-400"
+                            stroke="currentColor"
+                            fill="none"
+                            viewBox="0 0 48 48"
+                            aria-hidden="true"
                           >
-                            <span>Upload an avatar</span>
-                            <input
-                               id="file-upload"
-                               name="avatar"
-                               type="file"
-                               accept="images/*"
-                               required
-                               onChange={onChange}
-                               className="sr-only"
-                                />
-                          </label>
-                          <p className="pl-1">or drag and drop</p>
+                            <path
+                              d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                              strokeWidth={2}
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          <div className="flex text-sm text-gray-600">
+                            <label
+                              htmlFor="file-upload"
+                              className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                            >
+                              <span>Upload an avatar</span>
+                              <input
+                                 id="file-upload"
+                                 name="avatar"
+                                 type="file"
+                                 accept="images/*"
+                                 required
+                                 onChange={onChange}
+                                 className="sr-only"
+                                  />
+                            </label>
+                            <p className="pl-1">or drag and drop</p>
+                          </div>
+                          <p className="text-xs text-gray-500">PNG, JPG</p>
                         </div>
-                        <p className="text-xs text-gray-500">PNG, JPG</p>
                       </div>
                     </div>
-                  </div>
 
-                    {/*<div className="col-span-6 sm:col-span-4">
-                      <label htmlFor="avatar-upload" className="block text-lg font-medium text-gray-700">
-                        Avatar
-                      </label>
-                      <div className='d-flex align-items-center'>
-                        <div>
-                          <figure className='avatar mr-3 item-rtl'>
-                            <img
-                              src={avatarPreview}
-                              className='rounded-circle'
-                              alt='Avatar Preview'
-                            />
-                          </figure>
-                        </div>
-                        <div className='custom-file'>
-                          <input
-                            type="file"
-                            name='avatar'
-                            id="customFile"
-                            autoComplete="email"
-                            accept="images/*"
-                            required
-                            onChange={onChange}
-                            className="custom-file-input mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-10 shadow-md sm:text-sm border-gray-500 rounded-md"
-                          />
-                          <label className='custom-file-label' htmlFor='customFile'>
-                              Choose Avatar
-                          </label>
-                        </div>
-                      </div>
-                      
-                    </div>*/}
                   </div>
                 </div>
+                
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button
                     type="submit"

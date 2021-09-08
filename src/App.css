@@ -566,10 +566,9 @@ html {
     line-height: 2rem;
     text-align: center;
   }
+
   .footer-logo {
-    padding-left: 3.5rem;
-    height: 150px;
-    width: 150px;
+    width: 168px;
   }
   .cus-logo-container {
     padding-bottom: 1rem;

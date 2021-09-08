@@ -12,6 +12,7 @@ import AlertTemplate from 'react-alert-template-basic';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
+
 (async () => {
   const options = {
     timeout: 5000,
@@ -29,7 +30,7 @@ import { loadStripe } from '@stripe/stripe-js';
       <Elements stripe={stripePromise}>
         <Provider store={store}>
           <AlertProvider template={ AlertTemplate } {...options}>
-              <App />
+            <App />
           </AlertProvider>
         </Provider>
       </Elements>

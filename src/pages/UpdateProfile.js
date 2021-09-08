@@ -27,7 +27,6 @@ const UpdateProfile = ({ history }) => {
       setLastName(user.lastName);
       setEmail(user.email);
       setAvatarPreview(user.avatar.url !== 'x' && user.avatar.url || defaultAvatar);
-      setAvatar(user.avatar.url);
     }
     
     if (error) {
@@ -75,7 +74,7 @@ const UpdateProfile = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={"Update Profile"} />
+      // <MetaData title={"Update Profile"} />
 
       <div className="container container-fluid my-5">
       <div className="row wrapper  d-flex justify-content-center">
