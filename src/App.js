@@ -128,13 +128,14 @@ export default function App(){
             <ProtectedRoute path="/admin/users" component={UsersList} isAdmin={true} exact />
             <ProtectedRoute path="/admin/users/:id" component={UpdateUser} isAdmin={true} exact />
             <ProtectedRoute path="/admin/reviews" component={ProductReviews} isAdmin={true} exact /> 
-            <Route path="*" component={PageNotFound} exact />
             
             {stripeAPIKey && 
               <Elements stripe={loadStripe(stripeAPIKey)}>
                 <ProtectedRoute path="/order/payment" component={Payment} exact />
               </Elements>
             } 
+            <Route path="*" component={PageNotFound} exact />
+            
          </Switch>
 
          <Footer />

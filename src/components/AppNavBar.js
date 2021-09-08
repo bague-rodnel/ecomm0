@@ -32,7 +32,7 @@ function classNames(...classes) {
 }
 
 export default function AppNavBar() {
-  document.title = "Zuittzu"
+  document.title = "Zuittzu | Your Friendly Pet Food Shop"
   const alert = useAlert();
   const dispatch = useDispatch();
 
@@ -46,7 +46,6 @@ export default function AppNavBar() {
 
   return (
     <Fragment>
-      {/*<MetaData title={'Zuittzu'} />*/}
     <Disclosure as="nav" className="color">
       {({ open }) => (
         <>
