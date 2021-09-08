@@ -48,6 +48,7 @@ import UpdatePassword from './pages/UpdatePassword';
 import UpdateProfile from './pages/UpdateProfile';
 import ListOrders from './pages/ListOrders';
 import OrderDetails from './pages/OrderDetails';
+import NewListOrders from './pages/NewListOrders';
 
 import PageNotFound from './pages/PageNotFound';
 
@@ -110,7 +111,8 @@ export default function App(){
             <ProtectedRoute path="/me/update" component={UpdateProfile} exact />
             <ProtectedRoute path="/order/shipping" component={Shipping } exact />
             <ProtectedRoute path="/order/confirm" component={ConfirmOrder} exact />
-            <ProtectedRoute path="/orders/me" component={ListOrders} isAdmin={false} exact />
+            <ProtectedRoute path="/orders/me" component={NewListOrders} isAdmin={false} exact />
+            {/*<ProtectedRoute path="/orders/me2" component={NewListOrders} isAdmin={false} exact />*/}
             <ProtectedRoute path="/orders/:id" component={OrderDetails} exact />
             <ProtectedRoute path="/admin/dashboard" component={Dashboard} isAdmin={true} exact />
             <ProtectedRoute path="/admin/orders" component={OrdersList} isAdmin={true} exact />

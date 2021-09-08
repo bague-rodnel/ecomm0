@@ -274,13 +274,11 @@ html {
   font-weight: normal;
   font-size: 24px;
   line-height: 27px;
-  display: flex;
   align-items: center;
-  padding-left: 4.5rem;
   color: #ffffff;
 }
 .bi::before {
-  padding-right: 1rem;
+  margin-right: 0.5rem;
 }
 /*FOOTER*/
 
@@ -306,12 +304,9 @@ html {
   font-family: Rokkitt;
   font-style: normal;
   font-weight: normal;
-  font-size: 26px;
+  font-size: 1.5rem;
   line-height: 30px;
-  text-align: center;
   color: #ffffff;
-  display: flex;
-  padding-left: 5rem;
 }
 
 .cus-icon-text {
@@ -323,7 +318,6 @@ html {
   line-height: 30px;
   text-align: center;
   color: #ffffff;
-  display: flex;
 }
 
 .cus-span {
@@ -617,7 +611,7 @@ html {
     text-align: center;
   }
   .footer-logo {
-    padding-left: 4rem;
+    /*padding-left: 4rem;*/
   }
   .cus-logo-container {
     padding-bottom: 1rem;
@@ -633,7 +627,7 @@ html {
   }
   .footer-logo {
     padding-left: 0px;
-    margin-left: 5rem;
+    /*margin-left: 5rem;*/
   }
   .cus-logo-container {
     padding-bottom: 1rem;
@@ -654,14 +648,14 @@ html {
   }
   .footer-logo {
     padding-left: 0px;
-    margin-left: 6rem;
+    /*margin-left: 6rem;*/
   }
   .footer-text {
     margin-left: 0px;
   }
   .cus-icon {
-    padding-left: 5rem;
-    text-align: center;
+    /*padding-left: 5rem;*/
+    /*text-align: center;*/
   }
 }
 
@@ -683,13 +677,13 @@ html {
     padding-left: 0px;
     margin-left: 0px;
   }
-  .footer-text {
+  .footer-text, .cus-icon{
     padding-left: 0px;
     font-size: 20px;
     text-align: center;
   }
   .footer-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .cus-icon {
     padding: 0px;
@@ -743,11 +737,11 @@ html {
     height: 500px;
   }
   .cus-icon {
-    font-size: 24px;
-    line-height: 27px;
-    display: flex;
+    font-size: 26px;
+    line-height: 30px;
+    /*display: flex;*/
     align-items: center;
-    padding-left: 4.5rem;
+    /*padding-left: 4.5rem;*/
   }
 
   .footer-title {
@@ -779,11 +773,11 @@ html {
     font-size: 20px;
     padding-left: 3rem;
   }
-  .cus-icon-text {
+  .cus-icon-text, .cus-icon {
     font-size: 20px;
   }
   .cus-icon {
-    padding-left: 2rem;
+    /*padding-left: 2rem;*/
   }
   .cus-col {
     padding: 0px;
@@ -799,7 +793,7 @@ html {
     text-align: center;
   }
   .cus-icon {
-    padding-left: 5rem;
+    /*padding-left: 5rem;*/
   }
   .cus-col {
     padding: 0px;
@@ -816,7 +810,7 @@ html {
     text-align: center;
   }
   .cus-icon {
-    padding-left: 5rem;
+    /*padding-left: 5rem;*/
   }
   .cus-col {
     padding: 0px;
@@ -833,7 +827,7 @@ html {
     text-align: center;
   }
   .cus-icon {
-    padding-left: 7rem;
+    /*padding-left: 7rem;*/
   }
   .cus-col {
     padding: 0px;
