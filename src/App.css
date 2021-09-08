@@ -293,6 +293,7 @@ html {
   line-height: 34px;
   text-align: center;
   color: #ffffff;
+  margin-bottom:  1rem;
 }
 
 .footer-title:hover {
@@ -788,7 +789,7 @@ html {
     font-size: 30px;
   }
   .footer-text {
-    padding-left: 5rem;
+    /*padding-left: 5rem;*/
     text-align: center;
   }
   .cus-icon {
@@ -803,9 +804,9 @@ html {
   .footer-title {
     font-size: 35px;
   }
-  .footer-text {
+  .footer-text, .cus-icon, .bi::before {
     font-size: 30px;
-    padding-left: 6rem;
+    /*padding-left: 6rem;*/
     text-align: center;
   }
   .cus-icon {
@@ -821,8 +822,8 @@ html {
     font-size: 30px;
   }
   .footer-text {
-    font-size: 20px;
-    padding-left: 7rem;
+    /*font-size: 20px;*/
+    /*padding-left: 7rem;*/
     text-align: center;
   }
   .cus-icon {
