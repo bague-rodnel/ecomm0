@@ -19,13 +19,7 @@ import { loadStripe } from '@stripe/stripe-js';
     transition: transitions.SCALE
   }
 
-  const config = {
-    headers: {
-      'API_KEY': `${process.env.REACT_APP_API_KEY}`
-    }
-  }
-
-  const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/payments/stripeapi`, config);
+  const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/payments/stripeapi`);
   const stripeAPIKey = data.stripeAPIKey;
   const stripePromise = loadStripe(stripeAPIKey);
 
