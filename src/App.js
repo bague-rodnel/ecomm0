@@ -75,15 +75,10 @@ import { loadStripe } from '@stripe/stripe-js';
 
 export default function App(){
 
-  const [stripeAPIKey, setStripeAPIKey] = useState('pk_test_51JOMndGaIcykU8yAECuBAQrryn1oUmNvrhxRSu5owg64McO9BSzowuOlOiq7kngtBFi3r4tIZ3Io5b33k2BoG9zC00qPlep47U');
 
   useEffect(() => {
-    store.dispatch(loadUser());
 
-    // (async () => {
-    //   const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/payments/stripeapi`);
-    //   setStripeAPIKey(data.stripeAPIKey);
-    // })();
+    store.dispatch(loadUser());
 
   }, [])
 
@@ -101,7 +96,6 @@ export default function App(){
             <Route exact path="/login" component={Login} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/register" component={Register} />
-             {/* <Route exact path="/cart1" component={Cart1} /> */}
 
             <Route path="/products" component={Catalog} exact />
             <Route path="/cart" component={Cart} isAdmin={false} exact />
@@ -116,7 +110,6 @@ export default function App(){
             <ProtectedRoute path="/me/update" component={UpdateProfile} exact />
             <ProtectedRoute path="/order/shipping" component={Shipping } exact />
             <ProtectedRoute path="/order/confirm" component={ConfirmOrder} exact />
-            <ProtectedRoute path="/order/card" component={Card} exact />
             <ProtectedRoute path="/orders/me" component={ListOrders} isAdmin={false} exact />
             <ProtectedRoute path="/orders/:id" component={OrderDetails} exact />
             <ProtectedRoute path="/admin/dashboard" component={Dashboard} isAdmin={true} exact />
@@ -128,12 +121,8 @@ export default function App(){
             <ProtectedRoute path="/admin/users" component={UsersList} isAdmin={true} exact />
             <ProtectedRoute path="/admin/users/:id" component={UpdateUser} isAdmin={true} exact />
             <ProtectedRoute path="/admin/reviews" component={ProductReviews} isAdmin={true} exact /> 
-            
-            {stripeAPIKey && 
-              <Elements stripe={loadStripe(stripeAPIKey)}>
-                <ProtectedRoute path="/order/payment" component={Payment} exact />
-              </Elements>
-            } 
+            <ProtectedRoute path="/order/payment" component={Payment} exact />
+         
             <Route path="*" component={PageNotFound} exact />
             
          </Switch>

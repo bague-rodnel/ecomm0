@@ -8,6 +8,35 @@
   box-sizing: border-box;
 }
 
+#payment-form {
+  border: #F6F9FC solid 1px;
+  border-radius: 0.66rem;
+  /*background-image: radial-gradient(#FFE475, #E1C166, #B49C52);*/
+  background-image: radial-gradient(#FFE475, #E1C166, #CD8629);
+  padding: 1.6rem 1.5rem;
+  margin: 4rem auto;
+  box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%);
+  overflow:  hidden;
+  max-width:  340px;
+}
+
+#payment-form label {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left:  1.5rem;
+  width: 150%;
+}
+
+#card-element {
+  margin: 1rem auto 2rem;
+}
+
+#pay_btn {
+  /*background: #EE8001;*/
+  background:  #7C0000;
+  padding: 0.5rem 1rem;
+}
+
 .about-text {
   padding-top: 2rem;
   font-family: Roboto Slab;
