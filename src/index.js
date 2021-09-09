@@ -12,8 +12,19 @@ import AlertTemplate from 'react-alert-template-basic';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
+import Loader from './components/layout/Loader';
+
+
 
 (async () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Loader message={`Loading Zuittzu...`} />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+
+
   const options = {
     timeout: 5000,
     position: positions.BOTTOM_CENTER,
