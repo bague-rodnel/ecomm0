@@ -21,9 +21,11 @@ export default function Carousel() {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      speed: 3000,
-      autoplaySpeed: 3000,
-      cssEase: "linear",
+      speed: 2000,
+      autoplaySpeed: 5000,
+      // cssEase: "ease",
+      easing: "easeInCirc",
+      pauseOnHover: true
     };
 
 
