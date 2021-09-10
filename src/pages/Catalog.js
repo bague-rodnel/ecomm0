@@ -354,14 +354,7 @@ export default function Catalog({ match }) {
                                 <div key={option.value} className="flex items-center"
                                   onClick={()=>{setFilter(option.name.toLowerCase())}}
                                 >
-                                  {/* <input
-                                    id={`filter-${section.id}-${optionIdx}`}
-                                    name={`${section.id}[]`}
-                                    defaultValue={option.value}
-                                    type="checkbox"
-                                    defaultChecked={option.checked}
-                                    className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                  /> */}
+                  
                                   <label
                                     htmlFor={`filter-${section.id}-${optionIdx}`}
                                     className="ml-3 text-md text-gray-600"

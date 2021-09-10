@@ -4,6 +4,7 @@ import { Carousel, Modal, Button } from 'react-bootstrap';
 import Loader from '../components/layout/Loader';
 import MetaData from '../components/layout/MetaData';
 import ListReviews from '../components/review/ListReviews';
+import OtherProducts from '../components/OtherProducts';
 
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux'; 
@@ -252,6 +253,8 @@ const ProductDetails = ({ match }) => {
       </Fragment>
     )}
     </div>
+
+    { !loading && <OtherProducts category={product.category} />}
     </Fragment>
   )
 }
