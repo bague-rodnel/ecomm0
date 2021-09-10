@@ -137,7 +137,8 @@ const ProductDetails = ({ match }) => {
     <Fragment>
     <div className="container container-fluid  pb-12">
     { loading ? <Loader /> : (
-      product && <Fragment>
+      product && 
+      <Fragment>
         <div className="row f-flex justify-content-around">
           <div className="col-12 col-lg-5 img-fluid" id="product_image">
             <Carousel pause="hover">
@@ -159,7 +160,7 @@ const ProductDetails = ({ match }) => {
             <span>({product.numOfReviews} Reviews)</span>
 
 
-            <p className="h4 my-3">${product.price}</p>
+            <p className="h4 my-3">${product.price && product.price.toFixed(2)}</p>
 
           { user && !user.isAdmin ?
             <div className="d-flex">

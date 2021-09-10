@@ -403,7 +403,7 @@ export default function Catalog({ match }) {
            		         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                          {
                             products && products.map((product) => (
-           		             <a key={product._id} href={product.href} className="text-category group">
+           		             <Link key={product._id} to={`/products/${product._id}`} className="text-category group">
                             <div className="h-100 flex flex-column justify-content-between">
            		               <div className="flex-grow-1 flex w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
            		                  <Link to={`/products/${product._id}`}
@@ -424,7 +424,7 @@ export default function Catalog({ match }) {
            		                 <p className="mt-1 text-lg font-medium text-gray-900">${product.price.toFixed(2)}</p>
                               </div>
                             </div>
-           		             </a>
+           		             </Link>
            		           ))}
            		         </div>
                       }
