@@ -39,7 +39,6 @@ const ForgotPassword = () => {
 
   return (
     <Fragment>
-      <MetaData title={'Forgot Password'} />
 
       <div className="container container-fluid">
       <div className="row wrapper justify-content-center">
