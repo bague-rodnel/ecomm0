@@ -74,7 +74,6 @@ const UpdateProfile = ({ history }) => {
 
   return (
     <Fragment>
-      // <MetaData title={"Update Profile"} />
 
       <div className="container container-fluid my-5">
       <div className="row wrapper  d-flex justify-content-center">

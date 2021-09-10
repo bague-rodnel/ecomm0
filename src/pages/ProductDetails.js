@@ -134,7 +134,6 @@ const ProductDetails = ({ match }) => {
 
   return (
     <Fragment>
-    <MetaData title={'Product Details'} />
     <div className="container container-fluid  pb-12">
     { loading ? <Loader /> : (
       product && <Fragment>

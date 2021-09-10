@@ -34,7 +34,6 @@ const OrderDetails = ({ match }) => {
 
   return (
     <Fragment>
-      <MetaData title={'Order Details'} />
 
       { loading ? <Loader /> : (
         <Fragment>

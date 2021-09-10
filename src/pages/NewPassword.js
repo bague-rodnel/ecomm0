@@ -42,7 +42,6 @@ const NewPassword = ({ history, match }) => {
 
   return (
     <Fragment>
-      <MetaData title={'New Password Reset'} />
 
       <div className="container container-fluid my-5">
         <div className="row wrapper justify-content-center">

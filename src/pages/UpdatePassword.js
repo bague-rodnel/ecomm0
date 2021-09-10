@@ -50,7 +50,6 @@ const UpdatePassword = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={'Change Password'} />
 
       <div className="container container-fluid">
       <div className="row wrapper justify-content-center">

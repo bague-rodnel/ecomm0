@@ -83,7 +83,6 @@ export default function Example({ history }) {
 
   return (
     <Fragment>
-      <MetaData title={'Register User'} />
 
       <div className="mt-10 mb-5 sm:mt-0">
         <div className="md:grid md:grid-cols-3 md:gap-6">
