@@ -412,7 +412,7 @@ export default function Catalog({ ignoreTerm, history, match }) {
 
            		        
                       { keyword && 
-                        <p className="mb-3">Matching keyword: <em>"{keyword}"</em><Link to="/products" className="ml-3 text-danger">reset</Link></p>
+                        <p className="mb-3">Matching keyword: <em>"{keyword}"</em><Link to="/products" onClick={() => setCategory('')} className="ml-3 text-danger">reset</Link></p>
                       }
 
                       { loading ? <Loader /> :
