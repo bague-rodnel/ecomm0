@@ -254,7 +254,7 @@ const ProductDetails = ({ match }) => {
     )}
     </div>
 
-    { !loading && <OtherProducts category={product.category} />}
+    { !loading && <OtherProducts productId={product._id} category={product.category} />}
     </Fragment>
   )
 }
