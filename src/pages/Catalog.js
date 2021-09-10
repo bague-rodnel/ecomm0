@@ -70,7 +70,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Catalog({ match }) {
+export default function Catalog({ ignoreTerm, history, match }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -79,18 +79,23 @@ export default function Catalog({ match }) {
   const [rating, setRating] = useState(0);
   const [sliderChanged, setSliderChanged] = useState(false);
   const [filter, setFilter] = useState('');
+  const [ignoreKeyword, setIgnoreKeyword] = useState(ignoreTerm);
 
   const dispatch = useDispatch();
   const { loading, products, error, productsCount, resPerPage, filteredCount } = useSelector( state => state.allProducts );
-  const keyword = match && match.params.keyword;
 
+  const  keyword =  match && match.params.keyword;
   console.log('keyword: ', keyword);
+  console.log('ignoreKeyword: ', ignoreKeyword);
+
+
 
   useEffect(() => {
     setSliderChanged(false);
     if (error) {
       return alert.error(error);
     }
+
 
     console.log('fetching products with filters: ')
     console.log('keyword: ',keyword)
@@ -99,6 +104,7 @@ export default function Catalog({ match }) {
     console.log('rating: ',rating)
     console.log('filter: ',filter)
     dispatch(getProducts(keyword, currentPage, price, category, rating, filter));
+
 
   }, [dispatch, alert, error, keyword, currentPage, category, rating, filter, sliderChanged])
  
@@ -166,6 +172,13 @@ export default function Catalog({ match }) {
                        </a>
                      </li>
                    ))}
+                   <li key="reset">
+                    <a href="#"
+                      className="text-category text-sm text-gray-400  block px-3 py-3"
+                      onClick={() => setCategory('')}>
+                      Show all
+                    </a>
+                   </li>
                  </ul>
 
 
@@ -192,14 +205,6 @@ export default function Catalog({ match }) {
                                <div key={option.value} className="flex items-center"
                                   onClick={()=>{setFilter(option.name.toLowerCase())}}
                                >
-                               {/* <input
-                                    id={`filter-${section.id}-${optionIdx}`}
-                                    name={`${section.id}[]`}
-                                    defaultValue={option.value}
-                                    type="checkbox"
-                                    defaultChecked={option.checked}
-                                    className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"
-                                  /> */}
                                  <label
                                    htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
                                    className="ml-3 min-w-0 flex-1 text-gray-500"
@@ -330,6 +335,13 @@ export default function Catalog({ match }) {
                         <a className="text-category text-gray-900" href={category.href}>{category.name}</a>
                       </li>
                     ))}
+                    <li key="reset">
+                      <a href="#"
+                        className="text-category text-sm text-gray-400"
+                        onClick={() => setCategory('')}>
+                       Show all
+                      </a>
+                    </li>
                   </ul>
 
                   {filters.map((section) => (
@@ -398,7 +410,11 @@ export default function Catalog({ match }) {
            		       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
            		         <h2 className="sr-only">Products</h2>
 
-           		        { keyword ? <p className="mb-3">{`Matching keyword: "${keyword}"`}</p> : null }
+           		        
+                      { keyword && 
+                        <p className="mb-3">Matching keyword: <em>"{keyword}"</em><Link to="/products" className="ml-3 text-danger">reset</Link></p>
+                      }
+
                       { loading ? <Loader /> :
            		         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                          {

@@ -96,7 +96,8 @@ export default function App(){
             <Route exact path="/register" component={Register} />
 
             <Route exact path="/cart" component={Cart} isAdmin={false}  />
-            <Route exact path="/search/:keyword" component={Catalog} />
+            <Route exact path="/search" component={Catalog} ignoreTerm={false} />
+            <Route exact path="/search/:keyword" component={Catalog} ignoreTerm={false} />
             <Route exact path="/products" component={Catalog} />
             <Route exact path="/products/:id" component={ProductDetails} />
 

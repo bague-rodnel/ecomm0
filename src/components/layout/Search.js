@@ -11,6 +11,7 @@ const Search = ({ history }) => {
     } else {
       history.push('/products');
     }
+    setKeyword('');
   }
 
   return (
@@ -19,8 +20,9 @@ const Search = ({ history }) => {
         <input
           type="text"
           id="search_field"
+          value={keyword}
           className="form-control rounded-left z-1"
-          placeholder="Enter Product Name ..."
+          placeholder="Enter product keyword..."
           onChange={(e) => setKeyword(e.target.value)}
         />
         <div className="input-group-append">
