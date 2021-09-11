@@ -21,7 +21,7 @@ export default function Footer(){
                   <div className="row col-12 col-md-9 mx-auto">
                     <div className="mt-3 col-12 col-sm-4 text-center">
                       <ul>
-                        <li className="text-center footer-title">Vital Pet</li>
+                        <li className="text-center footer-title">What We Do</li>
                         <li className="text-center"><Link to="/about" className="footer-text ">About</Link></li>
                         <li className="text-center"><Link to="/about#nutrition" className="footer-text ">Nutrition</Link></li>
                         <li className="text-center"><Link to="/about#nutrition" className="footer-text ">Ingredients</Link></li>
