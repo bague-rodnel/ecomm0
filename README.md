@@ -13,6 +13,7 @@ https://csp3-ecommercev2.herokuapp.com/
 
 Zuittzu was designed with the following technologies:
 
+`React`javascript framework for component-driven design
 `Twitter Bootstrap` great UI boilerplate for modern web apps\
 `React Tailwind` another UI framework for modern web apps\
 `React Redux` for state management
