@@ -15,8 +15,10 @@ const Wrapper = styled.div`
 
 
 const Paw = styled.img`
-  width: 1.6rem;
-	margin: 0 0.3rem;
+  position: relative;
+  width: 2.25rem;
+	margin: 0 0.5rem;
+	top: ${ props=>props.left ? '-0.5rem' : 0 };
 	transform: ${ props => props.left ? 'rotate(75deg)' : 'rotate(105deg)' };
 	animation: fadeIn ${ props=>props.duration } linear ${ props=>props.delay } infinite;
 
@@ -25,25 +27,25 @@ const Paw = styled.img`
 			opacity: 0;
 		}
 		25% {
-			opacity: 1;
+			opacity: 0;
 		}
 		50% {
-			opacity: 1;
+			opacity: 0;
 		}
 		75% {
 			opacity: 1;
 		}
 		100% {
-			opacity: 0;
+			opacity: 1;
 		}
 	}
 `;
 
-const Spinner = ({message}) => (
+const Spinner = () => (
 	<Wrapper>
-		<Paw left delay='0s' duration='2s' src={pawImage} alt="paw" />
-		<Paw right delay='0.25s' duration='2s' src={pawImageAlt} alt="paw" />
-		<Paw left delay='0.5s' duration='2s' src={pawImage} alt="paw" />
+		<Paw left delay='0s' duration='0.8s' src={pawImage} alt="" />
+		<Paw right delay='0.15s' duration='0.8s' src={pawImageAlt} alt="" />
+		<Paw left delay='0.3s' duration='0.8s' src={pawImage} alt="" />
 	</Wrapper>
 );
 
