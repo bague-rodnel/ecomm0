@@ -5,7 +5,7 @@ import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon, ViewGridIcon } fr
 import { Link } from 'react-router-dom';
 
 //Product data
-import Loader from '../components/layout/Loader';
+import Spinner from '../components/layout/Spinner';
 
 import Pagination from 'react-js-pagination';
 import Slider from 'rc-slider';
@@ -415,7 +415,7 @@ export default function Catalog({ ignoreTerm, history, match }) {
                         <p className="mb-3">Matching keyword: <em>"{keyword}"</em><Link to="/products" onClick={() => setCategory('')} className="ml-3 text-danger">reset</Link></p>
                       }
 
-                      { loading ? <Loader /> :
+                      { loading ? <Spinner /> :
            		         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                          {
                             products && products.map((product) => (

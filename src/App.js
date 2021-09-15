@@ -26,6 +26,7 @@ import "slick-carousel/slick/slick-theme.css";
 import AppNavBar from './components/AppNavBar';
 import Footer from './components/Footer';
 import ProductCart from './components/ProductCart';
+import Spinner from './components/layout/Spinner';
 
 //admin dashboard related
 import Dashboard from './components/admin/Dashboard';

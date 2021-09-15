@@ -12,14 +12,13 @@ import AlertTemplate from 'react-alert-template-basic';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
-import Loader from './components/layout/Loader';
-
+import Spinner from './components/layout/Spinner';
 
 
 (async () => {
   ReactDOM.render(
     <React.StrictMode>
-      <Loader message={`Loading Zuittzu...`} />
+      <Spinner />
     </React.StrictMode>,
     document.getElementById('root')
   );
