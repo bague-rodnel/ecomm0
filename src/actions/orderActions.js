@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 import {
   CREATE_ORDER_SUCCESS,
@@ -19,19 +19,14 @@ import {
   ORDER_DETAILS_SUCCESS,
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_FAIL,
-  CLEAR_ERRORS
-} from '../constants/orderConstants';
+  CLEAR_ERRORS,
+} from "../constants/orderConstants";
 
-import store from '../store';
+import store from "../store";
 
-const API = 'https://csp3-api-v1.herokuapp.com';
-// const API = 'https://youthful-jones-4f9fef.netlify.app/';
-// const API = 'http://localhost:4000';
+const API = "https://csp3-api-v1.herokuapp.com";
 
-
-
-
-export const createOrder = (order) => async (dispatch)  => {
+export const createOrder = (order) => async (dispatch) => {
   try {
     dispatch({ type: CREATE_ORDER_REQUEST });
 
@@ -39,31 +34,29 @@ export const createOrder = (order) => async (dispatch)  => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-        'API_KEY': `${process.env.REACT_APP_API_KEY}`
-      }
-    }
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        API_KEY: `${process.env.REACT_APP_API_KEY}`,
+      },
+    };
 
-    // const { data } = await axios.post(`${API}/api/orders/`, order, config);
-    // const { data } = await axios.post(`http://localhost:4000/api/orders/`, order, config);
-      // const { data } = await axios.post(`/api/orders/`, order, config);
-      const { data } = await axios.post(`https://csp3-ecommercev2.herokuapp.com/api/orders/`, order, config);
-      
-
-
+    const { data } = await axios.post(
+      `https://csp3-ecommercev2.herokuapp.com/api/orders/`,
+      order,
+      config
+    );
 
     dispatch({
       type: CREATE_ORDER_SUCCESS,
-      payload: data.order
-    })
+      payload: data.order,
+    });
   } catch (error) {
-    dispatch( { 
+    dispatch({
       type: CREATE_ORDER_FAIL,
-      payload: error.response.data.message
-    })
+      payload: error.response.data.message,
+    });
   }
-}
+};
 
 export const myOrders = () => async (dispatch) => {
   try {
@@ -73,29 +66,28 @@ export const myOrders = () => async (dispatch) => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-        'API_KEY': `${process.env.REACT_APP_API_KEY}`
-      }
-    }
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        API_KEY: `${process.env.REACT_APP_API_KEY}`,
+      },
+    };
 
-    // const { data } = await axios.get(`${API}/api/orders/me`, config);
-    // const { data } = await axios.get(`http://localhost:4000/api/orders/me`, config);
-    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/orders/me`, config);
+    const { data } = await axios.get(
+      `https://csp3-ecommercev2.herokuapp.com/api/orders/me`,
+      config
+    );
 
-
-     
     dispatch({
       type: MY_ORDERS_SUCCESS,
-      payload: data.orders
-    })
+      payload: data.orders,
+    });
   } catch (error) {
     dispatch({
       type: MY_ORDERS_FAIL,
-      payload: error.response.data.message
-    })
+      payload: error.response.data.message,
+    });
   }
-}
+};
 
 export const getOrderDetails = (id) => async (dispatch) => {
   try {
@@ -105,27 +97,28 @@ export const getOrderDetails = (id) => async (dispatch) => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-        'API_KEY': `${process.env.REACT_APP_API_KEY}`
-      }
-    }
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        API_KEY: `${process.env.REACT_APP_API_KEY}`,
+      },
+    };
 
-    // const { data } = await axios.get(`${API}/api/orders/${id}`, config);
-    // const { data } = await axios.get(`http://localhost:4000/api/orders/${id}`, config);
-    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`, config);
+    const { data } = await axios.get(
+      `https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`,
+      config
+    );
 
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
-      payload: data.order
-    })
+      payload: data.order,
+    });
   } catch (error) {
     dispatch({
       type: ORDER_DETAILS_FAIL,
-      payload: error.response.data.message
-    })
+      payload: error.response.data.message,
+    });
   }
-}
+};
 
 // ADMIN
 export const getAllOrders = () => async (dispatch) => {
@@ -136,30 +129,30 @@ export const getAllOrders = () => async (dispatch) => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-        'API_KEY': `${process.env.REACT_APP_API_KEY}`
-      }
-    }
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        API_KEY: `${process.env.REACT_APP_API_KEY}`,
+      },
+    };
 
-    // const { data } = await axios.get(`${API}/api/orders`, config);
-    // const { data } = await axios.get(`http://localhost:4000/api/orders`, config);
-    const { data } = await axios.get(`https://csp3-ecommercev2.herokuapp.com/api/orders`, config);
-
+    const { data } = await axios.get(
+      `https://csp3-ecommercev2.herokuapp.com/api/orders`,
+      config
+    );
 
     dispatch({
       type: ALL_ORDERS_SUCCESS,
-      payload: data
-    })
+      payload: data,
+    });
   } catch (error) {
     dispatch({
       type: ALL_ORDERS_FAIL,
-      payload: error.response.data.message
-    })
+      payload: error.response.data.message,
+    });
   }
-}
+};
 
-export const updateOrder = (id, orderData) => async (dispatch)  => {
+export const updateOrder = (id, orderData) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_ORDER_REQUEST });
 
@@ -167,33 +160,31 @@ export const updateOrder = (id, orderData) => async (dispatch)  => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-        'API_KEY': `${process.env.REACT_APP_API_KEY}`
-      }
-    }
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        API_KEY: `${process.env.REACT_APP_API_KEY}`,
+      },
+    };
 
-
-    // const { data } = await axios.put(`${API}/api/orders/${id}`, orderData, config);
-    // const { data } = await axios.put(`http://localhost:4000/api/orders/${id}`, orderData, config);
-    const { data } = await axios.put(`https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`, orderData, config);
-
-
+    const { data } = await axios.put(
+      `https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`,
+      orderData,
+      config
+    );
 
     dispatch({
       type: UPDATE_ORDER_SUCCESS,
-      payload: data.success
-    })
-
+      payload: data.success,
+    });
   } catch (error) {
-    dispatch({ 
+    dispatch({
       type: UPDATE_ORDER_FAIL,
-      payload: error.response.data.message
-    })
+      payload: error.response.data.message,
+    });
   }
-}
+};
 
-export const deleteOrder = (id) => async (dispatch)  => {
+export const deleteOrder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDER_REQUEST });
 
@@ -201,33 +192,31 @@ export const deleteOrder = (id) => async (dispatch)  => {
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-        'API_KEY': `${process.env.REACT_APP_API_KEY}`
-      }
-    }
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        API_KEY: `${process.env.REACT_APP_API_KEY}`,
+      },
+    };
 
-
-    // const { data } = await axios.delete(`${API}/api/orders/${id}`, config);
-    // const { data } = await axios.delete(`http://localhost:4000/api/orders/${id}`, config);
-    const { data } = await axios.delete(`https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`, config);
-
+    const { data } = await axios.delete(
+      `https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`,
+      config
+    );
 
     dispatch({
       type: DELETE_ORDER_SUCCESS,
-      payload: data.success
-    })
-
+      payload: data.success,
+    });
   } catch (error) {
-    dispatch({ 
+    dispatch({
       type: DELETE_ORDER_FAIL,
-      payload: error.response.data.message
-    })
+      payload: error.response.data.message,
+    });
   }
-}
+};
 
 export const clearErrors = () => async (dispatch) => {
   dispatch({
-    type: CLEAR_ERRORS
-  })
-}
+    type: CLEAR_ERRORS,
+  });
+};
