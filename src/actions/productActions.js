@@ -66,7 +66,9 @@ export const getProducts =
     try {
       dispatch({ type: ALL_PRODUCTS_REQUEST });
 
-      let link = `https://csp3-ecommercev2.herokuapp.com/api/products?keyword=${keyword.toLowerCase()}&page=${currentPage}&price[lte]=${
+      let link = `${
+        process.env.REACT_APP_API_HOST
+      }/api/products?keyword=${keyword.toLowerCase()}&page=${currentPage}&price[lte]=${
         price[1]
       }&price[gte]=${price[0]}&ratings[gte]=${rating}&filters=${filter}`;
 
@@ -93,7 +95,7 @@ export const getProductDetails = (id) => async (dispatch) => {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/${id}`
+      `${process.env.REACT_APP_API_HOST}/api/products/${id}`
     );
 
     dispatch({
@@ -124,7 +126,7 @@ export const newProduct = (productData) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `https://csp3-ecommercev2.herokuapp.com/api/products`,
+      `${process.env.REACT_APP_API_HOST}/api/products`,
       productData,
       config
     );
@@ -156,7 +158,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/${id}`,
+      `${process.env.REACT_APP_API_HOST}/api/products/${id}`,
       productData,
       config
     );
@@ -187,7 +189,7 @@ export const archiveProduct = (id) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/${id}/archive`,
+      `${process.env.REACT_APP_API_HOST}/api/products/${id}/archive`,
       {},
       config
     );
@@ -219,7 +221,7 @@ export const unarchiveProduct = (id) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/${id}/unarchive`,
+      `${process.env.REACT_APP_API_HOST}/api/products/${id}/unarchive`,
       {},
       config
     );
@@ -251,7 +253,7 @@ export const deleteProduct = (id) => async (dispatch) => {
     };
 
     const { data } = await axios.delete(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/${id}`,
+      `${process.env.REACT_APP_API_HOST}/api/products/${id}`,
       config
     );
 
@@ -282,7 +284,7 @@ export const newReview = (reviewData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/reviews`,
+      `${process.env.REACT_APP_API_HOST}/api/products/reviews`,
       reviewData,
       config
     );
@@ -314,7 +316,7 @@ export const getAdminProducts = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/admin`,
+      `${process.env.REACT_APP_API_HOST}/api/products/admin`,
       config
     );
 
@@ -345,7 +347,7 @@ export const getProductReviews = (productId) => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/reviews?productId=${productId}`,
+      `${process.env.REACT_APP_API_HOST}/api/products/reviews?productId=${productId}`,
       config
     );
 
@@ -377,7 +379,7 @@ export const deleteReview = (id, productId) => async (dispatch) => {
     };
 
     const { data } = await axios.delete(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/reviews?id=${id}&productId=${productId}`,
+      `${process.env.REACT_APP_API_HOST}/api/products/reviews?id=${id}&productId=${productId}`,
       config
     );
 

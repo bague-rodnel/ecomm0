@@ -41,7 +41,7 @@ export const createOrder = (order) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `https://csp3-ecommercev2.herokuapp.com/api/orders/`,
+      `${process.env.REACT_APP_API_HOST}/api/orders/`,
       order,
       config
     );
@@ -73,7 +73,7 @@ export const myOrders = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/orders/me`,
+      `${process.env.REACT_APP_API_HOST}/api/orders/me`,
       config
     );
 
@@ -104,7 +104,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`,
+      `${process.env.REACT_APP_API_HOST}/api/orders/${id}`,
       config
     );
 
@@ -136,7 +136,7 @@ export const getAllOrders = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/orders`,
+      `${process.env.REACT_APP_API_HOST}/api/orders`,
       config
     );
 
@@ -167,7 +167,7 @@ export const updateOrder = (id, orderData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`,
+      `${process.env.REACT_APP_API_HOST}/api/orders/${id}`,
       orderData,
       config
     );
@@ -199,7 +199,7 @@ export const deleteOrder = (id) => async (dispatch) => {
     };
 
     const { data } = await axios.delete(
-      `https://csp3-ecommercev2.herokuapp.com/api/orders/${id}`,
+      `${process.env.REACT_APP_API_HOST}/api/orders/${id}`,
       config
     );
 

@@ -58,7 +58,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/login`,
+      `${process.env.REACT_APP_API_HOST}/api/users/login`,
       { email, password },
       config
     );
@@ -90,7 +90,7 @@ export const register = (userData) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/register`,
+      `${process.env.REACT_APP_API_HOST}/api/users/register`,
       userData,
       config
     );
@@ -123,7 +123,7 @@ export const loadUser = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/me`,
+      `${process.env.REACT_APP_API_HOST}/api/users/me`,
       config
     );
 
@@ -160,7 +160,7 @@ export const getAllUsers = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/users`,
+      `${process.env.REACT_APP_API_HOST}/api/users`,
       config
     );
 
@@ -211,7 +211,7 @@ export const updateProfile = (userData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/me/update`,
+      `${process.env.REACT_APP_API_HOST}/api/users/me/update`,
       userData,
       config
     );
@@ -244,7 +244,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/password/update`,
+      `${process.env.REACT_APP_API_HOST}/api/users/password/update`,
       passwords,
       config
     );
@@ -274,7 +274,7 @@ export const forgotPassword = (email) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/password/forgot`,
+      `${process.env.REACT_APP_API_HOST}/api/users/password/forgot`,
       email,
       config
     );
@@ -305,7 +305,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/password/reset/${token}`,
+      `${process.env.REACT_APP_API_HOST}/api/users/password/reset/${token}`,
       passwords,
       config
     );
@@ -338,7 +338,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/${id}`,
+      `${process.env.REACT_APP_API_HOST}/api/users/${id}`,
       userData,
       config
     );
@@ -372,7 +372,7 @@ export const getUserDetails = (id) => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/${id}`,
+      `${process.env.REACT_APP_API_HOST}/api/users/${id}`,
       config
     );
 
@@ -405,7 +405,7 @@ export const deleteUser = (id) => async (dispatch) => {
     };
 
     const { data } = await axios.delete(
-      `https://csp3-ecommercev2.herokuapp.com/api/users/${id}`,
+      `${process.env.REACT_APP_API_HOST}/api/users/${id}`,
       config
     );
 

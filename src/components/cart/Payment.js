@@ -1,21 +1,19 @@
-import React, {Fragment} from 'react';
-import {withRouter} from 'react-router-dom';
-import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import React, { Fragment } from "react";
+import { withRouter } from "react-router-dom";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
-import { useAlert } from 'react-alert';
-import { useDispatch, useSelector } from 'react-redux';
-import { createOrder, clearErrors, myOrders } from '../../actions/orderActions';
-import { emptyCart } from '../../actions/cartActions';
+import { useAlert } from "react-alert";
+import { useDispatch, useSelector } from "react-redux";
+import { createOrder, clearErrors, myOrders } from "../../actions/orderActions";
+import { emptyCart } from "../../actions/cartActions";
 
-import CheckoutSteps from './CheckoutSteps';
+import CheckoutSteps from "./CheckoutSteps";
 
-import axios from 'axios';
-import store from '../../store';
+import axios from "axios";
+import store from "../../store";
 
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
-
-
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Card = ({ history }) => {
   const swal = withReactContent(Swal);
@@ -24,20 +22,18 @@ const Card = ({ history }) => {
   const elements = useElements();
   const dispatch = useDispatch();
 
-
-  const { user } = useSelector( state => state.auth );
-  const { cartItems, shippingInfo } = useSelector( state => state.cart );
-  const { error } = useSelector( state => state.newOrder );
-  
+  const { user } = useSelector((state) => state.auth);
+  const { cartItems, shippingInfo } = useSelector((state) => state.cart);
+  const { error } = useSelector((state) => state.newOrder);
 
   const order = {
     orderItems: cartItems,
-    shippingInfo
-  }
+    shippingInfo,
+  };
 
-  const orderInfo = JSON.parse(sessionStorage.getItem('orderInfo'));
+  const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
   if (orderInfo) {
-    order.itemsPrice = orderInfo.itemsPrice ;
+    order.itemsPrice = orderInfo.itemsPrice;
     order.taxPrice = orderInfo.taxPrice;
     order.shippingPrice = orderInfo.shippingPrice;
     order.totalPrice = orderInfo.totalPrice;
@@ -45,13 +41,13 @@ const Card = ({ history }) => {
 
   const paymentData = {
     amount: Math.round(orderInfo.totalPrice * 100),
-    email: user.email
-  }
+    email: user.email,
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if ( !stripe || !elements ) {
+    if (!stripe || !elements) {
       return;
     }
 
@@ -61,13 +57,17 @@ const Card = ({ history }) => {
 
       const config = {
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-          'API_KEY': `${process.env.REACT_APP_API_KEY}`
-        }
-      }
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+          API_KEY: `${process.env.REACT_APP_API_KEY}`,
+        },
+      };
 
-      const res = await axios.post(`https://csp3-ecommercev2.herokuapp.com/api/payments/process`, paymentData, config);
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_HOST}/api/payments/process`,
+        paymentData,
+        config
+      );
       const clientSecret = res.data.client_secret;
 
       // confirm the payment on the client;
@@ -76,67 +76,69 @@ const Card = ({ history }) => {
           card: elements.getElement(CardElement),
           billing_details: {
             name: user.name,
-            email: user.email
-          }
+            email: user.email,
+          },
         },
-        receipt_email: user.email
-      })
+        receipt_email: user.email,
+      });
 
-      if ( result.error ){
+      if (result.error) {
         alert.error(result.error.message);
-        document.querySelector('#pay_btn').disabled = false;
-
+        document.querySelector("#pay_btn").disabled = false;
       } else {
-        if (result.paymentIntent.status === 'succeeded') {
-
+        if (result.paymentIntent.status === "succeeded") {
           order.paymentInfo = {
             id: result.paymentIntent.id,
-            status: result.paymentIntent.status
-          }
+            status: result.paymentIntent.status,
+          };
 
           dispatch(createOrder(order));
           dispatch(emptyCart(user));
 
           swal.fire({
-            icon: 'success',
-            title: 'Thank you for your purchase!',
+            icon: "success",
+            title: "Thank you for your purchase!",
             showConfirmButton: false,
-            timer: 1500
-          })
+            timer: 1500,
+          });
 
           dispatch(myOrders());
-          history.push('/orders/me');
+          history.push("/orders/me");
         } else {
-          alert.error('There is some issue while processing the payment');
+          alert.error("There is some issue while processing the payment");
         }
       }
-
     } catch (error) {
-      document.querySelector('#pay_btn').disabled = false;
+      document.querySelector("#pay_btn").disabled = false;
       alert.error(error.response.data.message);
     }
-  }
-
-
-    
+  };
 
   return (
-
     <div className="container container-fluid">
-      <CheckoutSteps shipping confirmOrder payment /> 
+      <CheckoutSteps shipping confirmOrder payment />
 
       <div className="row">
-
-        <form id="payment-form" onSubmit={handleSubmit}
-          className="col-12 col-sm-8 col-md-6 col-lg-4">
-          <label className="mb-3 text-gray-400 bg-dark py-1" htmlFor="card-element">Enter your card details</label>
+        <form
+          id="payment-form"
+          onSubmit={handleSubmit}
+          className="col-12 col-sm-8 col-md-6 col-lg-4"
+        >
+          <label
+            className="mb-3 text-gray-400 bg-dark py-1"
+            htmlFor="card-element"
+          >
+            Enter your card details
+          </label>
           <CardElement id="card-element" />
 
-          <button id="pay_btn" className="text-white btn">Pay</button>
+          <button id="pay_btn" className="text-white btn">
+            Pay
+          </button>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default withRouter(Card);
