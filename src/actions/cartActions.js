@@ -29,7 +29,7 @@ export const addItemToCart =
       },
     };
     const { data } = await axios.get(
-      `https://csp3-ecommercev2.herokuapp.com/api/products/${id}`,
+      `${process.env.REACT_APP_API_HOST}/api/products/${id}`,
       config
     );
 
