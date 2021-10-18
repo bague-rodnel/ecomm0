@@ -48,7 +48,7 @@ Zuittzu was designed with the following technologies:
 This is the result of the following people's efforts:
 
 Frances Ann Salaysay\
-Tailwind,Bootstrap\
+Tailwind\
 [LinkedIn](https://www.linkedin.com/in/francesannsalaysay)
 
 John Dariel Domdom\
@@ -60,7 +60,7 @@ Graphics \
 [LinkedIn](https://www.linkedin.com/in/josuer-bague/)
 
 Rodnel Bague\
-React,Redux,Bootstrap\
+React,Redux\
 [LinkedIn](https://www.linkedin.com/in/rodnel-bague-953274202/)
 
 Concurrent code contribution was possible with Git.
